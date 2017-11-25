@@ -3,10 +3,23 @@ body{background-color:black;background-repeat:no-repeat;background-position:cent
 .mobile{background-image:url(../delta-emulator-controls.jpg);}
 canvas{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;font-weight:bold;text-align:right;vertical-align:bottom;font-family:monospace;display:none;}
+/*
 .touch-controls{display:flex;padding:1em;position:absolute;bottom:0px;left:0px;right:0px}
 .touch-controls button{display:inline-block;-webkit-appearance:none;border:0;outline:0;background:#fff;opacity:0.7;width:3em;height:3em;line-height:3em;text-align:center;cursor:pointer;transition:.1s ease;margin:.5em;}
 .touch-controls button:active{transform:scale(0.95);box-shadow:0 0 10px 0 rgba(0,0,0,0.4) inset;}
 .touch-dpad,.touch-buttons{flex-grow:1;text-align:center;}
 .touch-buttons{align-self:flex-end;}
 .touch-dpad--up{flex-grow:1;width:100%;}
+*/
 @media screen and (orientation:portrait){canvas{bottom:50%;height:50%;}body:not(.mobile) canvas{top:25%;bottom:25%;}}
+#touchpad:nth-child(1){padding:0;margin:0;border:1px solid white;position:absolute;width:24vw;height:7vh;top:3vh;left:0vw}
+#touchpad:nth-child(2){padding:0;margin:0;border:1px solid white;position:absolute;width:24vw;height:7vh;top:3vh;left:75vw}
+#touchpad:nth-child(3){padding:0;margin:0;border:1px solid white;position:absolute;width:5vw;height:5vh;bottom:0;left:37vw}
+#touchpad:nth-child(4){padding:0;margin:0;border:1px solid white;position:absolute;width:5vw;height:5vh;bottom:0;left:56vw}
+#touchpad:nth-child(5){padding:0;margin:0;border:1px solid white;position:absolute;width:18vw;height:22vh;top:35vh;left:81vw}
+#touchpad:nth-child(6){padding:0;margin:0;border:1px solid white;position:absolute;width:16vw;height:23vh;top:47vh;left:59vw}
+#touchpad:nth-child(7){padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:16vh;top:25vh;left:13vw}
+#touchpad:nth-child(8){padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:16vh;top:60vh;left:13vw}
+#touchpad:nth-child(9){padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:17vh;top:42vh;left:0vw}
+#touchpad:nth-child(10){padding:0;margin:0;border:1px solid white;position:absolute;width:12vw;height:17vh;top:42vh;left:27vw}
+#touchpad:nth-child(11){padding:0;margin:0;border:1px solid white;position:absolute;width:10vw;height:5vh;bottom:0;left:0vw}
