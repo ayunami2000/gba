@@ -8,7 +8,5 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 .touch-controls button:active{transform:scale(0.95);box-shadow:0 0 10px 0 rgba(0,0,0,0.4) inset;}
 .touch-dpad,.touch-buttons{flex-grow:1;text-align:center;}
 .touch-buttons{align-self:flex-end;}
-#touch-l{display:block;position:absolute;top:0;left:0;width:25%;}
-#touch-r{display:block;position:absolute;top:0;right:0;width:25%;}
 .touch-dpad--up{flex-grow:1;width:100%;}
 @media screen and (orientation:portrait){canvas{bottom:50%;height:50%;}body:not(.mobile) canvas{top:25%;bottom:25%;}}
