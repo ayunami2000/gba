@@ -91,12 +91,15 @@
       return (value===1);
   }
   /*
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //!!!MAKE MOUSEUP, TOUCHEND, AND TOUCHCANCEL COUNTERPART TO BELOW!!!
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   window.ontouchstart=window.onmousedown=function(e){
   var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
   if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
   //L
   keyDownCode(49);
-  }else if(){
+  }else if(relCoords["x"]*749>=564&&relCoords["x"]*749<=749&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
   //R
   keyDownCode(50);
   }else if(){
