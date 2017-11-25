@@ -91,7 +91,6 @@
       return (value===1);
   }
   /*
-  //!!!!!!!!!FIX X VALUES!!!!!!!!!!!!!!!
   window.ontouchstart=window.onmousedown=function(e){
   e.preventDefault();
   //if(isPaused){return;}
@@ -168,43 +167,80 @@
   }else if(isClickingBtn("MENU")){
   }else{}
   }
-  window.ontouchend=window.ontouchcancel=window.onmouseup=function(e){
+  window.ontouchstart=window.onmousedown=function(e){
   e.preventDefault();
   //if(isPaused){return;}
-  var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
-  if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
-  //L
+  var btnCoords={
+    "L":{
+      "x":[0,185],
+      "y":[20,60]
+    },
+    "R":{
+      "x":[564,749],
+      "y":[20,60]
+    },
+    "SELECT":{
+      "x":[282,326],
+      "y":[305,564]
+    },
+    "START":{
+      "x":[422,466],
+      "y":[305,564]
+    },
+    "A":{
+      "x":[610,749],
+      "y":[200,325]
+    },
+    "B":{
+      "x":[444,566],
+      "y":[270,400]
+    },
+    "UP":{
+      "x":[100,208],
+      "y":[145,240]
+    },
+    "DOWN":{
+      "x":[100,208],
+      "y":[340,435]
+    },
+    "LEFT":{
+      "x":[0,106],
+      "y":[240,340]
+    },
+    "RIGHT":{
+      "x":[206,300],
+      "y":[240,340]
+    },
+    "MENU":{
+      "x":[0,75],
+      "y":[305,564]
+    }
+  };
+  var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
+  var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
+  if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
+  function isClickingBtn(btn){return (relCoords["x"]*749>=(isPortraitMode?(749+btnCoords[btn]["x"][0]):btnCoords[btn]["x"][0])&&relCoords["x"]*749<=(isPortraitMode?(749+btnCoords[btn]["x"][1]):btnCoords[btn]["x"][1])&&relCoords["y"]*564>=btnCoords[btn]["y"][0]&&relCoords["y"]*564<=btnCoords[btn]["y"][1]);}
+  if(isClickingBtn("L")){
   keyUp(49);
-  }else if(relCoords["x"]*749>=564&&relCoords["x"]*749<=749&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
-  //R
+  }else if(isClickingBtn("R")){
   keyUp(50);
-  }else if(relCoords["x"]*749>=282&&relCoords["x"]*749<=326&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
-  //SELECT
+  }else if(isClickingBtn("SELECT")){
   keyUp(16);
-  }else if(relCoords["x"]*749>=422&&relCoords["x"]*749<=466&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
-  //START
+  }else if(isClickingBtn("START")){
   keyUp(13);
-  }else if(relCoords["x"]*749>=610&&relCoords["x"]*749<=749&&relCoords["y"]*564>=200&&relCoords["y"]*564<=325){
-  //A
+  }else if(isClickingBtn("A")){
   keyUp(88);
-  }else if(relCoords["x"]*749>=444&&relCoords["x"]*749<=566&&relCoords["y"]*564>=270&&relCoords["y"]*564<=400){
-  //B
+  }else if(isClickingBtn("B")){
   keyUp(90);
-  }else if(relCoords["x"]*749>=100&&relCoords["x"]*749<=208&&relCoords["y"]*564>=145&&relCoords["y"]*564<=240){
-  //UP
+  }else if(isClickingBtn("UP")){
   keyUp(38);
-  }else if(relCoords["x"]*749>=100&&relCoords["x"]*749<=208&&relCoords["y"]*564>=340&&relCoords["y"]*564<=435){
-  //DOWN
+  }else if(isClickingBtn("DOWN")){
   keyUp(40);
-  }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=106&&relCoords["y"]*564>=240&&relCoords["y"]*564<=340){
-  //LEFT
+  }else if(isClickingBtn("LEFT")){
   keyUp(37);
-  }else if(relCoords["x"]*749>=206&&relCoords["x"]*749<=300&&relCoords["y"]*564>=240&&relCoords["y"]*564<=340){
-  //RIGHT
+  }else if(isClickingBtn("RIGHT")){
   keyUp(39);
-  }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=75&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
-  //MENU - pause game
-  Iodine.pause();//Iodine.play();
+  }else if(isClickingBtn("MENU")){
   }else{}
   }
   */
