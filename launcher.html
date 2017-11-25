@@ -65,23 +65,23 @@
     <body>
         <canvas id="emulator_target" width="240px" height="160px"></canvas>
         <div class="touch-controls">
-                <div class="touch-dpad">
-                    <button id="touch-up" onmousedown="keyDownCode(38);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(38);">↑</button><br>
-                    <button id="touch-left" onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);">←</button>
-                    <button id="touch-right" onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);">→</button><br>
-                    <button id="touch-down" onmousedown="keyDownCode(40);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(40);">↓</button>
-                </div>
-                <div class="touch-buttons">
-                    <button id="touch-select" onmousedown="keyDownCode(16);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(16);">SEL</button> 
-                    <button id="touch-start" onmousedown="keyDownCode(13);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(13);">STR</button>
-                </div>
-                <div class="touch-buttons">
-                    <button id="touch-a" onmousedown="keyDownCode(88);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(88);">A</button>
-                    <button id="touch-b" onmousedown="keyDownCode(89);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(89);">B</button><br>
-                    <button id="touch-l" onmousedown="keyDownCode(49);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(49);">L</button>
-                    <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
-                </div>
+            <div class="touch-dpad">
+                <button id="touch-up" onmousedown="keyDownCode(38);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(38);">↑</button><br>
+                <button id="touch-left" onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);">←</button>
+                <button id="touch-right" onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);">→</button><br>
+                <button id="touch-down" onmousedown="keyDownCode(40);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(40);">↓</button>
             </div>
+            <div class="touch-buttons">
+                <button id="touch-select" onmousedown="keyDownCode(16);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(16);">SEL</button> 
+                <button id="touch-start" onmousedown="keyDownCode(13);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(13);">STR</button>
+            </div>
+            <div class="touch-buttons">
+                <button id="touch-a" onmousedown="keyDownCode(88);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(88);">A</button>
+                <button id="touch-b" onmousedown="keyDownCode(89);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(89);">B</button><br>
+                <button id="touch-l" onmousedown="keyDownCode(49);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(49);">L</button>
+                <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
+            </div>
+        </div>
         <span id="tempMessage"></span>
     </body>
 </html>
