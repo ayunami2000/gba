@@ -64,6 +64,7 @@
     </head>
 <body class="mobile">
   <canvas id="emulator_target" width="240px" height="160px"></canvas>
+  <!--
   <div class="touch-controls">
       <div class="touch-dpad">
           <button id="touch-up" onmousedown="keyDownCode(38);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(38);">↑</button><br>
@@ -82,17 +83,19 @@
           <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
       </div>
   </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:24vw;height:7vh;top:3vh;left:0vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:24vw;height:7vh;top:3vh;left:75vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:5vw;height:5vh;bottom:0;left:37vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:5vw;height:5vh;bottom:0;left:56vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:18vw;height:22vh;top:35vh;left:81vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:16vw;height:23vh;top:47vh;left:59vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:16vh;top:25vh;left:13vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:16vh;top:60vh;left:13vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:14vw;height:17vh;top:42vh;left:0vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:12vw;height:17vh;top:42vh;left:27vw"> </div>
-  <div style="padding:0;margin:0;border:1px solid white;position:absolute;width:10vw;height:5vh;bottom:0;left:0vw"> </div>
+  -->
+  <div id="touchpad">
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
+  <div> </div>
   <script>
   function getVals(){
   var btnCoords=Object.keys({
