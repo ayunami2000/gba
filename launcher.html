@@ -85,7 +85,7 @@
   <div style="padding:0;margin:0;border:1px solid white;width:24.7vw;height:7.1vh;position:absolute;top:"> </div>
   <script>
   function getVals(){
-  var btnCoords={
+  var btnCoords=Object.values({
     "L":{
       "x":[0,185],
       "y":[20,60]
@@ -130,7 +130,7 @@
       "x":[0,75],
       "y":[305,564]
     }
-  };
+  });
   for(var i=0;i<11;i++){alert("width:"+parseInt(100*((btnCoords[i]["x"][1]-btnCoords[i]["x"][0])/749))+"vw;height:"+parseInt(100*((btnCoords[i]["y"][1]-btnCoords[i]["y"][0])/564))+";top:"+parseInt(100*(btnCoords[i]["y"][0]/564))+"vh;left:"+parseInt(100*(btnCoords[i]["x"][0]/749))+"vw;");}
   }
   String.prototype.oneOrMoreOf=function(arr){
