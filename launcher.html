@@ -91,10 +91,7 @@
       return (value===1);
   }
   /*
-  window.ontouchstart=window.onmousedown=function(e){
-  e.preventDefault();
-  //if(isPaused){return;}
-  var btnCoords={
+    var btnCoords={
     "L":{
       "x":[0,185],
       "y":[20,60]
@@ -140,6 +137,9 @@
       "y":[305,564]
     }
   };
+  window.ontouchstart=window.onmousedown=function(e){
+  e.preventDefault();
+  //if(isPaused){return;}
   var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
   var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
   if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
@@ -170,52 +170,6 @@
   window.ontouchstart=window.onmousedown=function(e){
   e.preventDefault();
   //if(isPaused){return;}
-  var btnCoords={
-    "L":{
-      "x":[0,185],
-      "y":[20,60]
-    },
-    "R":{
-      "x":[564,749],
-      "y":[20,60]
-    },
-    "SELECT":{
-      "x":[282,326],
-      "y":[305,564]
-    },
-    "START":{
-      "x":[422,466],
-      "y":[305,564]
-    },
-    "A":{
-      "x":[610,749],
-      "y":[200,325]
-    },
-    "B":{
-      "x":[444,566],
-      "y":[270,400]
-    },
-    "UP":{
-      "x":[100,208],
-      "y":[145,240]
-    },
-    "DOWN":{
-      "x":[100,208],
-      "y":[340,435]
-    },
-    "LEFT":{
-      "x":[0,106],
-      "y":[240,340]
-    },
-    "RIGHT":{
-      "x":[206,300],
-      "y":[240,340]
-    },
-    "MENU":{
-      "x":[0,75],
-      "y":[305,564]
-    }
-  };
   var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
   var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
   if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
