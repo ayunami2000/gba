@@ -82,16 +82,10 @@
           <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
       </div>
   </div>
+  <div style="padding:0;margin:0;border:1px solid white;width:24.7vw;height:7.1vh;position:absolute;top:"> </div>
   <script>
-  String.prototype.oneOrMoreOf=function(arr){
-      'use strict';
-      var str=this;
-      var value=0;
-      arr.forEach(function(word){value+=str.includes(word);});
-      return (value===1);
-  }
-  /*
-    var btnCoords={
+  function getVals(){
+  var btnCoords={
     "L":{
       "x":[0,185],
       "y":[20,60]
@@ -137,70 +131,15 @@
       "y":[305,564]
     }
   };
-  window.ontouchstart=window.onmousedown=function(e){try{
-  e.preventDefault();
-  //if(isPaused){return;}
-  var relCoords={"x":e.clientX,"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
-  var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
-  if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
-  function isClickingBtn(btn){return (relCoords["x"]*749>=btnCoords[btn]["x"][0]&&relCoords["x"]*749<=btnCoords[btn]["x"][1]&&relCoords["y"]*564>=(isPortraitMode?(564+btnCoords[btn]["y"][0]):btnCoords[btn]["y"][0])&&relCoords["y"]*564<=(isPortraitMode?(564+btnCoords[btn]["y"][1]):btnCoords[btn]["y"][1]));}
-  if(isClickingBtn("L")){
-  keyDownCode(49);
-  }else if(isClickingBtn("R")){
-  keyDownCode(50);
-  }else if(isClickingBtn("SELECT")){
-  keyDownCode(16);
-  }else if(isClickingBtn("START")){
-  keyDownCode(13);
-  }else if(isClickingBtn("A")){
-  keyDownCode(88);
-  }else if(isClickingBtn("B")){
-  keyDownCode(90);
-  }else if(isClickingBtn("UP")){
-  keyDownCode(38);
-  }else if(isClickingBtn("DOWN")){
-  keyDownCode(40);
-  }else if(isClickingBtn("LEFT")){
-  keyDownCode(37);
-  }else if(isClickingBtn("RIGHT")){
-  keyDownCode(39);
-  }else if(isClickingBtn("MENU")){
-  }else{}
-  }catch(ex){alert(ex);}
+  for(var i=0;i<11;i++){alert("width:"+parseInt(100*((btnCoords[i]["x"][1]-btnCoords[i]["x"][0])/749))+"vw;height:"+parseInt(100*((btnCoords[i]["y"][1]-btnCoords[i]["y"][0])/564))+";top:"+parseInt(100*(btnCoords[i]["y"][0]/564))+"vh;left:"+parseInt(100*(btnCoords[i]["x"][0]/749))+"vw;");}
   }
-  window.ontouchstart=window.onmousedown=function(e){try{
-  e.preventDefault();
-  //if(isPaused){return;}
-  var relCoords={"x":e.clientX,"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
-  var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
-  if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
-  function isClickingBtn(btn){return (relCoords["x"]*749>=btnCoords[btn]["x"][0]&&relCoords["x"]*749<=btnCoords[btn]["x"][1]&&relCoords["y"]*564>=(isPortraitMode?(564+btnCoords[btn]["y"][0]):btnCoords[btn]["y"][0])&&relCoords["y"]*564<=(isPortraitMode?(564+btnCoords[btn]["y"][1]):btnCoords[btn]["y"][1]));}
-  if(isClickingBtn("L")){
-  keyUp(49);
-  }else if(isClickingBtn("R")){
-  keyUp(50);
-  }else if(isClickingBtn("SELECT")){
-  keyUp(16);
-  }else if(isClickingBtn("START")){
-  keyUp(13);
-  }else if(isClickingBtn("A")){
-  keyUp(88);
-  }else if(isClickingBtn("B")){
-  keyUp(90);
-  }else if(isClickingBtn("UP")){
-  keyUp(38);
-  }else if(isClickingBtn("DOWN")){
-  keyUp(40);
-  }else if(isClickingBtn("LEFT")){
-  keyUp(37);
-  }else if(isClickingBtn("RIGHT")){
-  keyUp(39);
-  }else if(isClickingBtn("MENU")){
-  }else{}
-  }catch(ex){alert(ex);}
+  String.prototype.oneOrMoreOf=function(arr){
+      'use strict';
+      var str=this;
+      var value=0;
+      arr.forEach(function(word){value+=str.includes(word);});
+      return (value===1);
   }
-  */
-  
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
   document.querySelector(".touch-controls").style.display="none";
   document.body.classList.remove("mobile");
