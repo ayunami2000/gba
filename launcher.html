@@ -140,10 +140,11 @@
       "x":[0,75],
       "y":[305,564]
     }
-    };
+  };
   var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
-  if((window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
-  function isClickingBtn(btn){return (relCoords["x"]*749>=btnCoords[btn]["x"][0]&&relCoords["x"]*749<=btnCoords[btn]["x"][1]&&relCoords["y"]*564>=btnCoords[btn]["y"][0]&&relCoords["y"]*564<=btnCoords[btn]["y"][1]);}
+  var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
+  if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
+  function isClickingBtn(btn){return (relCoords["x"]*749>=(isPortraitMode?(749+btnCoords[btn]["x"][0]):btnCoords[btn]["x"][0])&&relCoords["x"]*749<=(isPortraitMode?(749+btnCoords[btn]["x"][1]):btnCoords[btn]["x"][1])&&relCoords["y"]*564>=btnCoords[btn]["y"][0]&&relCoords["y"]*564<=btnCoords[btn]["y"][1]);}
   if(isClickingBtn("L")){
   keyDownCode(49);
   }else if(isClickingBtn("R")){
