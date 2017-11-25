@@ -24,9 +24,9 @@
         <script src="IodineGBA/core/sound/Channel1.js"></script>
         <script src="IodineGBA/core/sound/Channel2.js"></script>
         <script src="IodineGBA/core/sound/Channel3.js"></script>
-            <script src="IodineGBA/core/sound/Channel4.js"></script>
-            <script src="IodineGBA/core/CPU/ARM.js"></script>
-            <script src="IodineGBA/core/CPU/THUMB.js"></script>
+        <script src="IodineGBA/core/sound/Channel4.js"></script>
+        <script src="IodineGBA/core/CPU/ARM.js"></script>
+        <script src="IodineGBA/core/CPU/THUMB.js"></script>
             <script src="IodineGBA/core/CPU/CPSR.js"></script>
             <script src="IodineGBA/core/graphics/Renderer.js"></script>
             <script src="IodineGBA/core/graphics/RendererProxy.js"></script>
@@ -60,23 +60,12 @@
             <script src="user_scripts/IodineGBACoreGlueCode.js"></script>
             <script src="user_scripts/base64.js"></script>
             <script>
-            function touchBtn(evt,key){
-            var keyboardEvent = document.createEvent("KeyboardEvent");
-            var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
-            keyboardEvent[initMethod](
-                evt, // event type : keydown, keyup, keypress
-                true, // bubbles
-                true, // cancelable
-                    window, // viewArg: should be window
-                    false, // ctrlKeyArg
-                    false, // altKeyArg
-                    false, // shiftKeyArg
-                    false, // metaKeyArg
-                    key, // keyCodeArg : unsigned long the virtual key code, else 0
-                    0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
-            );
+            function touchBtn(evt,key){try{
+            var keyboardEvent=document.createEvent("KeyboardEvent");
+            var initMethod=typeof keyboardEvent.initKeyboardEvent!=='undefined'?"initKeyboardEvent":"initKeyEvent";
+            keyboardEvent[initMethod](evt,true,true,window,false,false,false,false,key,0);
             document.dispatchEvent(keyboardEvent);
-            }
+            }catch(e){alert(e);}}
             </script>
             <link rel="stylesheet" href="user_css/main.css">
     </head>
