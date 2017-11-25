@@ -171,7 +171,7 @@
   window.ontouchstart=window.onmousedown=function(e){try{
   e.preventDefault();
   //if(isPaused){return;}
-  var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
+  var relCoords={"x":e.clientX,"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
   var isPortraitMode=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight);
   if(isPortraitMode){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
   function isClickingBtn(btn){return (relCoords["x"]*749>=btnCoords[btn]["x"][0]&&relCoords["x"]*749<=btnCoords[btn]["x"][1]&&relCoords["y"]*564>=(isPortraitMode?(564+btnCoords[btn]["y"][0]):btnCoords[btn]["y"][0])&&relCoords["y"]*564<=(isPortraitMode?(564+btnCoords[btn]["y"][1]):btnCoords[btn]["y"][1]));}
