@@ -95,6 +95,7 @@
   //!!!MAKE MOUSEUP, TOUCHEND, AND TOUCHCANCEL COUNTERPART TO BELOW!!!
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   window.ontouchstart=window.onmousedown=function(e){
+  //if(isPaused){return;}
   var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
   if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
   //L
@@ -129,7 +130,7 @@
   }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=75&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
   //MENU - pause game (onblur)
   
-  }
+  }else{e.preventDefault();}
   }
   */
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
