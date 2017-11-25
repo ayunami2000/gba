@@ -64,7 +64,6 @@
     </head>
 <body class="mobile">
   <canvas id="emulator_target" width="240px" height="160px"></canvas>
-  <!--
   <div class="touch-controls">
       <div class="touch-dpad">
           <button id="touch-up" onmousedown="keyDownCode(38);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(38);">↑</button><br>
@@ -83,7 +82,6 @@
           <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
       </div>
   </div>
-  -->
   <script>
   String.prototype.oneOrMoreOf=function(arr){
       'use strict';
@@ -92,9 +90,7 @@
       arr.forEach(function(word){value+=str.includes(word);});
       return (value===1);
   }
-  
-  //----------------
-  
+  /*
     var btnCoords={
     "L":{
       "x":[0,185],
@@ -203,11 +199,10 @@
   }else{}
   }catch(ex){alert(ex);}
   }
-  
-  //------------
+  */
   
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
-  //document.querySelector(".touch-controls").style.display="none";
+  document.querySelector(".touch-controls").style.display="none";
   document.body.classList.remove("mobile");
   }
   </script>
