@@ -91,10 +91,8 @@
       return (value===1);
   }
   /*
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //!!!MAKE MOUSEUP, TOUCHEND, AND TOUCHCANCEL COUNTERPART TO BELOW!!!
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   window.ontouchstart=window.onmousedown=function(e){
+  e.preventDefault();
   //if(isPaused){return;}
   var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
   if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
@@ -128,9 +126,47 @@
   //RIGHT
   keyDownCode(39);
   }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=75&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
-  //MENU - pause game (onblur)
+  //MENU
+  }else{}
+  }
+  window.ontouchend=window.ontouchcancel=window.onmouseup=function(e){
+  e.preventDefault();
+  //if(isPaused){return;}
+  var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
+  if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
+  //L
+  keyUp(49);
+  }else if(relCoords["x"]*749>=564&&relCoords["x"]*749<=749&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
+  //R
+  keyUp(50);
+  }else if(relCoords["x"]*749>=282&&relCoords["x"]*749<=326&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
+  //SELECT
+  keyUp(16);
+  }else if(relCoords["x"]*749>=422&&relCoords["x"]*749<=466&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
+  //START
+  keyUp(13);
+  }else if(relCoords["x"]*749>=610&&relCoords["x"]*749<=749&&relCoords["y"]*564>=200&&relCoords["y"]*564<=325){
+  //A
+  keyUp(88);
+  }else if(relCoords["x"]*749>=444&&relCoords["x"]*749<=566&&relCoords["y"]*564>=270&&relCoords["y"]*564<=400){
+  //B
+  keyUp(90);
+  }else if(relCoords["x"]*749>=100&&relCoords["x"]*749<=208&&relCoords["y"]*564>=145&&relCoords["y"]*564<=240){
+  //UP
+  keyUp(38);
+  }else if(relCoords["x"]*749>=100&&relCoords["x"]*749<=208&&relCoords["y"]*564>=340&&relCoords["y"]*564<=435){
+  //DOWN
+  keyUp(40);
+  }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=106&&relCoords["y"]*564>=240&&relCoords["y"]*564<=340){
+  //LEFT
+  keyUp(37);
+  }else if(relCoords["x"]*749>=206&&relCoords["x"]*749<=300&&relCoords["y"]*564>=240&&relCoords["y"]*564<=340){
+  //RIGHT
+  keyUp(39);
+  }else if(relCoords["x"]*749>=0&&relCoords["x"]*749<=75&&relCoords["y"]*564>=305&&relCoords["y"]*564<=564){
+  //MENU - pause game
   Iodine.pause();//Iodine.play();
-  }else{e.preventDefault();}
+  }else{}
   }
   */
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
