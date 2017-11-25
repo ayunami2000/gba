@@ -82,6 +82,13 @@
                 <button id="touch-r" onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);">R</button>
             </div>
         </div>
+        <script>
+        if(navigator.platform.toLowerCase().includes("freebsd"||"linux"||"os/2"||"pocket pc"||"win"||"nintendo"||"openbsd"||"s60"||"symbian"||"palmos"||"webos"||"sunos"||"playstation"||"psp"||"hp-ux"||"masking-agent"||"webtv"||"x11")){
+        document.querySelector(".touch-controls").style.display="none";
+        document.querySelector("canvas").style.height="50%";
+        document.querySelector("canvas").style.top=document.querySelector("canvas").style.bottom="25%";
+        }
+        </script>
         <span id="tempMessage"></span>
     </body>
 </html>
