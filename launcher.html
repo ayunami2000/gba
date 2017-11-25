@@ -141,7 +141,7 @@
       "y":[305,564]
     }
   };
-  window.ontouchstart=window.onmousedown=function(e){
+  window.ontouchstart=window.onmousedown=function(e){try{
   e.preventDefault();
   //if(isPaused){return;}
   var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
@@ -170,8 +170,9 @@
   keyDownCode(39);
   }else if(isClickingBtn("MENU")){
   }else{}
+  }catch(ex){alert(ex);}
   }
-  window.ontouchstart=window.onmousedown=function(e){
+  window.ontouchstart=window.onmousedown=function(e){try{
   e.preventDefault();
   //if(isPaused){return;}
   var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
@@ -200,6 +201,7 @@
   keyUp(39);
   }else if(isClickingBtn("MENU")){
   }else{}
+  }catch(ex){alert(ex);}
   }
   
   //------------
