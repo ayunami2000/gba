@@ -91,10 +91,13 @@
       return (value===1);
   }
   /*
+  //!!!!!!!!!FIX X VALUES!!!!!!!!!!!!!!!
   window.ontouchstart=window.onmousedown=function(e){
   e.preventDefault();
   //if(isPaused){return;}
-  var relCoords=["x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)];
+  var btnCoords={"L":{"x":[0,185],"y":[20,60]},};
+  var relCoords={"x":e.clientX/(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth),"y":e.clientY/(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)};
+  if((window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)<(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)){relCoords["x"]=relCoords["x"]*2;relCoords["y"]=relCoords["y"]*2;}
   if(relCoords["x"]*749>=0&&relCoords["x"]*749<=185&&relCoords["y"]*564>=20&&relCoords["y"]*564<=60){
   //L
   keyDownCode(49);
