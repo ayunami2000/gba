@@ -60,13 +60,13 @@
             <script src="user_scripts/IodineGBACoreGlueCode.js"></script>
             <script src="user_scripts/base64.js"></script>
             <script>
-            function touchBtn(key){
+            function touchBtn(evt,key){
             var keyboardEvent = document.createEvent("KeyboardEvent");
             var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
             keyboardEvent[initMethod](
-                   "keydown", // event type : keydown, keyup, keypress
-                    true, // bubbles
-                    true, // cancelable
+                evt, // event type : keydown, keyup, keypress
+                true, // bubbles
+                true, // cancelable
                     window, // viewArg: should be window
                     false, // ctrlKeyArg
                     false, // altKeyArg
@@ -84,20 +84,20 @@
         <canvas id="emulator_target" width="240px" height="160px"></canvas>
         <div class="touch-controls">
                 <div class="touch-dpad">
-                    <button id="touch-up" onclick="touchBtn(38);">↑</button><br>
-                    <button id="touch-left" onclick="touchBtn(37);">←</button>
-                    <button id="touch-right" onclick="touchBtn(39);">→</button><br>
-                    <button id="touch-down" onclick="touchBtn(40);">↓</button>
+                    <button id="touch-up" ontouchstart="touchBtn('keydown',38);" ontouchend="touchBtn('keyup',38);">↑</button><br>
+                    <button id="touch-left" ontouchstart="touchBtn('keydown',37);" ontouchend="touchBtn('keyup',37);">←</button>
+                    <button id="touch-right" ontouchstart="touchBtn('keydown',39);" ontouchend="touchBtn('keyup',39);">→</button><br>
+                    <button id="touch-down" ontouchstart="touchBtn('keydown',40);" ontouchend="touchBtn('keyup',40);">↓</button>
                 </div>
                 <div class="touch-buttons">
-                    <button id="touch-select" onclick="touchBtn(16);">SEL</button> 
-                    <button id="touch-start" onclick="touchBtn(13);">STR</button>
+                    <button id="touch-select" ontouchstart="touchBtn('keydown',16);" ontouchend="touchBtn('keyup',16);">SEL</button> 
+                    <button id="touch-start" ontouchstart="touchBtn('keydown',13);" ontouchend="touchBtn('keyup',13);">STR</button>
                 </div>
                 <div class="touch-buttons">
-                    <button id="touch-a" onclick="touchBtn(88);">A</button>
-                    <button id="touch-b" onclick="touchBtn(89);">B</button><br>
-                    <button id="touch-l" onclick="touchBtn(49);">L</button>
-                    <button id="touch-r" onclick="touchBtn(50);">R</button>
+                    <button id="touch-a" ontouchstart="touchBtn('keydown',88);" ontouchend="touchBtn('keyup',88);">A</button>
+                    <button id="touch-b" ontouchstart="touchBtn('keydown',89);" ontouchend="touchBtn('keyup',89);">B</button><br>
+                    <button id="touch-l" ontouchstart="touchBtn('keydown',49);" ontouchend="touchBtn('keyup',49);">L</button>
+                    <button id="touch-r" ontouchstart="touchBtn('keydown',50);" ontouchend="touchBtn('keyup',50);">R</button>
                 </div>
             </div>
         <span id="tempMessage"></span>
