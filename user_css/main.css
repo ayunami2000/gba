@@ -55,4 +55,4 @@ span{
 .touch-dpad,.touch-buttons{flex-grow:1;text-align:center;}
 .touch-buttons{align-self:flex-end;}
 .touch-dpad--up{flex-grow:1;width:100%;}
-@media screen and (orientation:portrait){canvas:not(.desktop){bottom:50%;height:50%;}.desktop{top:25%;bottom:25%;}}
+@media screen and (orientation:portrait){canvas{bottom:50%;height:50%;}.desktop{top:25%;bottom:25%;}}
