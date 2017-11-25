@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>GBA GameCenter</title>
+        <title>GBA Emulator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <script>window.onerror=function(msg,url,ln,col,err){alert('Error\n\n'+msg+'\nLine '+ln+'\nColumn '+col+'\nStack Trace\n'+err);}</script>
@@ -49,37 +49,37 @@
         <script src="IodineGBA/core/cartridge/SRAM.js"></script>
         <script src="IodineGBA/core/cartridge/FLASH.js"></script>
         <script src="IodineGBA/core/cartridge/EEPROM.js"></script>
-            <!--Add your webpage scripts below-->
-            <script src="user_scripts/XAudioJS/swfobject.js"></script>
-            <script src="user_scripts/XAudioJS/resampler.js"></script>
-            <script src="user_scripts/XAudioJS/XAudioServer.js"></script>
-            <script src="user_scripts/IodineGBAROMLoadGlueCode.js"></script>
-            <script src="user_scripts/IodineGBAJoyPadGlueCode.js"></script>
-            <script src="user_scripts/IodineGBASavesGlueCode.js"></script>
-            <script src="user_scripts/IodineGBAGraphicsGlueCode.js"></script>
-            <script src="user_scripts/IodineGBAAudioGlueCode.js"></script>
-            <script src="user_scripts/IodineGBACoreGlueCode.js"></script>
-            <script src="user_scripts/base64.js"></script>
-            <link rel="stylesheet" href="user_css/main.css">
+        <!--Add your webpage scripts below-->
+        <script src="user_scripts/XAudioJS/swfobject.js"></script>
+        <script src="user_scripts/XAudioJS/resampler.js"></script>
+        <script src="user_scripts/XAudioJS/XAudioServer.js"></script>
+        <script src="user_scripts/IodineGBAROMLoadGlueCode.js"></script>
+        <script src="user_scripts/IodineGBAJoyPadGlueCode.js"></script>
+        <script src="user_scripts/IodineGBASavesGlueCode.js"></script>
+        <script src="user_scripts/IodineGBAGraphicsGlueCode.js"></script>
+        <script src="user_scripts/IodineGBAAudioGlueCode.js"></script>
+        <script src="user_scripts/IodineGBACoreGlueCode.js"></script>
+        <script src="user_scripts/base64.js"></script>
+        <link rel="stylesheet" href="user_css/main.css">
     </head>
     <body>
         <canvas id="emulator_target" width="240px" height="160px"></canvas>
         <div class="touch-controls">
                 <div class="touch-dpad">
-                    <button id="touch-up" ontouchstart="Iodine.keyDown(38);" ontouchend="Iodine.keyUp(38);">↑</button><br>
-                    <button id="touch-left" ontouchstart="Iodine.keyDown(37);" ontouchend="Iodine.keyUp(37);">←</button>
-                    <button id="touch-right" ontouchstart="Iodine.keyDown(39);" ontouchend="Iodine.keyUp(39);">→</button><br>
-                    <button id="touch-down" ontouchstart="Iodine.keyDown(40);" ontouchend="Iodine.keyUp(40);">↓</button>
+                    <button id="touch-up" ontouchstart="Iodine.keyDown(38);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(38);">↑</button><br>
+                    <button id="touch-left" ontouchstart="Iodine.keyDown(37);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(37);">←</button>
+                    <button id="touch-right" ontouchstart="Iodine.keyDown(39);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(39);">→</button><br>
+                    <button id="touch-down" ontouchstart="Iodine.keyDown(40);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(40);">↓</button>
                 </div>
                 <div class="touch-buttons">
-                    <button id="touch-select" ontouchstart="Iodine.keyDown(16);" ontouchend="Iodine.keyUp(16);">SEL</button> 
-                    <button id="touch-start" ontouchstart="Iodine.keyDown(13);" ontouchend="Iodine.keyUp(13);">STR</button>
+                    <button id="touch-select" ontouchstart="Iodine.keyDown(16);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(16);">SEL</button> 
+                    <button id="touch-start" ontouchstart="Iodine.keyDown(13);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(13);">STR</button>
                 </div>
                 <div class="touch-buttons">
-                    <button id="touch-a" ontouchstart="Iodine.keyDown(88);" ontouchend="Iodine.keyUp(88);">A</button>
-                    <button id="touch-b" ontouchstart="Iodine.keyDown(89);" ontouchend="Iodine.keyUp(89);">B</button><br>
-                    <button id="touch-l" ontouchstart="Iodine.keyDown(49);" ontouchend="Iodine.keyUp(49);">L</button>
-                    <button id="touch-r" ontouchstart="Iodine.keyDown(50);" ontouchend="Iodine.keyUp(50);">R</button>
+                    <button id="touch-a" ontouchstart="Iodine.keyDown(88);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(88);">A</button>
+                    <button id="touch-b" ontouchstart="Iodine.keyDown(89);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(89);">B</button><br>
+                    <button id="touch-l" ontouchstart="Iodine.keyDown(49);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(49);">L</button>
+                    <button id="touch-r" ontouchstart="Iodine.keyDown(50);" ontouchcancel="this.ontouchend();" onmousedown="this.ontouchstart();" onmouseup="this.ontouchend();" ontouchend="Iodine.keyUp(50);">R</button>
                 </div>
             </div>
         <span id="tempMessage"></span>
