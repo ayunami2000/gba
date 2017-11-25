@@ -40,49 +40,23 @@ span {
 }
 
 .touch-controls button{
-    display: inline-block;
-    -webkit-appearance: none;
+    display:inline-block;
+    -webkit-appearance:none;
     border:0;
-    outline: 0;
-    background: #fff;
-    opacity: 0.7;
-    width: 3em;
-    height: 3em;
-    line-height: 3em;
-    text-align: center;
-    cursor: pointer;
-    transition: .1s ease;
+    outline:0;
+    background:#fff;
+    opacity:0.7;
+    width:3em;
+    height:3em;
+    line-height:3em;
+    text-align:center;
+    cursor:pointer;
+    transition:.1s ease;
     margin:.5em;
 }
-
-.touch-controls button:active{
-    transform: scale(0.95);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4) inset;
-}
-
-.touch-dpad, .touch-buttons{
-    flex-grow: 1;
-    text-align: center;
-}
-
-.touch-buttons{
-    align-self: flex-end;
-}
-
-.touch-dpad--up{
-    flex-grow: 1;
-    width: 100%;
-}
-
+.touch-controls button:active{transform:scale(0.95);box-shadow:0 0 10px 0 rgba(0,0,0,0.4) inset;}
+.touch-dpad,.touch-buttons{flex-grow:1;text-align:center;}
+.touch-buttons{align-self:flex-end;}
+.touch-dpad--up{flex-grow:1;width:100%;}
 /* Only show controls on portrait mode screens */
-@media screen and (min-aspect-ratio: 1/1) {
-    .touch-controls{
-        display: none;
-    }
-    #main {
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
-        align-items: center;
-    }
-}
+@media screen and (orientation:landscape) {.touch-controls{display:none;}}
