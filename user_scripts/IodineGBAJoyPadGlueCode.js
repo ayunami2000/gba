@@ -31,6 +31,18 @@ var keyZones = [
                 //L:
                 [49]
 ];
+function keyDownCode(keyCode){
+    keyCode = keyCode | 0;
+    for (var keyMapIndex = 0; (keyMapIndex | 0) < 10; keyMapIndex = ((keyMapIndex | 0) + 1) | 0) {
+        var keysMapped = keyZones[keyMapIndex | 0];
+        var keysTotal = keysMapped.length | 0;
+        for (var matchingIndex = 0; (matchingIndex | 0) < (keysTotal | 0); matchingIndex = ((matchingIndex | 0) + 1) | 0) {
+            if ((keysMapped[matchingIndex | 0] | 0) == (keyCode | 0)) {
+                Iodine.keyDown(keyMapIndex | 0);
+            }
+        }
+    }
+}
 function keyDown(e) {
     var keyCode = e.keyCode | 0;
     for (var keyMapIndex = 0; (keyMapIndex | 0) < 10; keyMapIndex = ((keyMapIndex | 0) + 1) | 0) {
