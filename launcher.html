@@ -83,7 +83,13 @@
             </div>
         </div>
         <script>
-        if(navigator.platform.toLowerCase().includes("freebsd"||"linux"||"os/2"||"pocket pc"||"win"||"nintendo"||"openbsd"||"s60"||"symbian"||"palmos"||"webos"||"sunos"||"playstation"||"psp"||"hp-ux"||"masking-agent"||"webtv"||"x11")){
+        String.prototype.contains=function(arr){
+            'use strict';
+            var value=0;
+            arr.forEach((function(word,str){value+=str.includes(word);})(this));
+            return (value===1);
+        }
+        if(navigator.platform.toLowerCase().contains(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
         document.querySelector(".touch-controls").style.display="none";
         document.querySelector("canvas").style.height="50%";
         document.querySelector("canvas").style.top=document.querySelector("canvas").style.bottom="25%";
