@@ -4,6 +4,7 @@ html,body {
     width: 100%;
     height: 100%;
 }
+body{background-image:url(/skins/default.png);background-repeat:no-repeat;background-position:center bottom;background-size:100% 50%;)}
 canvas {
     position:absolute;
     top:0;
