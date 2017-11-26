@@ -11,9 +11,7 @@
 function GlueCodeMixer() {
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
-      //ios or unsupported
-      alert("Unable to load audio");
-      if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){}else{parentObj.disableAudio();}
+      parentObj.disableAudio();
     });
     this.outputUnits = [];
     this.outputUnitsValid = [];
