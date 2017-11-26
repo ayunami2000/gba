@@ -11,14 +11,16 @@
 function GlueCodeMixer() {
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
-                     //Disable audio in the callback here:
-                     //parentObj.disableAudio();
+      //ios or unsupported
+      if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){window.onclick=function(){audioInit();GlueCodeMixer();};}else{parentObj.disableAudio();}
     });
     this.outputUnits = [];
     this.outputUnitsValid = [];
     setInterval(function(){parentObj.checkAudio();}, 16);
     this.initializeBuffer();
 }
+audioInit();
+function audioInit(){
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -255,4 +257,5 @@ AudioSimpleBuffer.prototype.getSlice = function () {
             return this.buffer.slice(0, lengthOf);
         }
     }
+}
 }
