@@ -46,14 +46,14 @@ this.GlueCodeMixerInput=GlueCodeMixerInput;
 this.AudioBufferWrapper=AudioBufferWrapper;
 this.AudioSimpleBuffer=AudioSimpleBuffer;
 
-this.GlueCodeMixer.sampleRate=GlueCodeMixer.prototype.sampleRate = 44100;
-this.GlueCodeMixer.bufferAmount=GlueCodeMixer.prototype.bufferAmount = 44100;
-this.GlueCodeMixer.channelCount=GlueCodeMixer.prototype.channelCount = 2;
-this.GlueCodeMixer.initializeBuffer=GlueCodeMixer.prototype.initializeBuffer = function () {
+this.GlueCodeMixer.sampleRate = 44100;
+this.GlueCodeMixer.bufferAmount = 44100;
+this.GlueCodeMixer.channelCount = 2;
+this.GlueCodeMixer.initializeBuffer = function () {
     this.buffer = new AudioSimpleBuffer(this.channelCount,
                                          this.bufferAmount);
 }
-this.GlueCodeMixer.appendInput=GlueCodeMixer.prototype.appendInput = function (inUnit) {
+this.GlueCodeMixer.appendInput = function (inUnit) {
     if (this.audio) {
         for (var index = 0; index < this.outputUnits.length; index++) {
             if (!this.outputUnits[index]) {
