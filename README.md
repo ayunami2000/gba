@@ -1,7 +1,5 @@
-# GBA Games Page:
-
+# Delta Emulator WebApp [iOS/PC]
+## Start Playing NOW!
 https://ayunami2000.github.io/gba
-
-# GBA Emulator Core Used:
-
-https://github.com/taisel/IodineGBA
+# Based off of:
+https://github.com/jsemu3/gba
