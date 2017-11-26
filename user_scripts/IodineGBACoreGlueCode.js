@@ -130,7 +130,7 @@ window.onload = function () {
     //Hook the GUI controls.
     registerGUIEvents();
     //Initialize the audio and enable sound:
-    if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){window.onclick=function(){registerAudioHandler();Iodine.enableAudio();}}else{registerAudioHandler();Iodine.enableAudio();}
+    if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){document.body.onclick=document.body.ontouchstart=function(){registerAudioHandler();Iodine.enableAudio();}}else{registerAudioHandler();Iodine.enableAudio();}
     //Download the BIOS:
     downloadBIOS();
 }
