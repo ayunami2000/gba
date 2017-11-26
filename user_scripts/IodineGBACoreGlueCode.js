@@ -151,7 +151,7 @@ function downloadROM(gamename) {
 function registerROM() {
     clearTempString();
     processDownload(this, attachROM);
-    //if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i)) {Iodine.disableAudio();}
+    if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){/*Iodine.disableAudio();*/}
     Iodine.play();
 }
 function registerBlitterHandler() {
@@ -161,8 +161,8 @@ function registerBlitterHandler() {
     Iodine.attachGraphicsFrameHandler(function (buffer) {Blitter.copyBuffer(buffer);});
 }
 function registerAudioHandler() {
-    Mixer = new (new audioInit()).GlueCodeMixer();
-    MixerInput = new (new audioInit()).GlueCodeMixerInput(Mixer);
+    Mixer = new GlueCodeMixer();
+    MixerInput = new GlueCodeMixerInput(Mixer);
     Iodine.attachAudioHandler(MixerInput);
 }
 function registerGUIEvents() {
