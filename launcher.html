@@ -138,17 +138,15 @@
       document.body.classList.remove("mobile");
   }
   if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){
-      window.ontouchstart=function(){
-          document.getElementById('audio').src="";
-          window.setTimeout(function(){
-              document.getElementById('audio').onload=function(){
-                  setTimeout(function(){
-                      registerAudioHandler();
-                      Iodine.enableAudio();
-                  },1000);
-              };
-              document.getElementById('audio').src="user_scripts/IodineGBAAudioGlueCode.js";
-          },500);
+      window.onclick=function(){
+          document.getElementById('audio').removeAttribute("src");
+          document.getElementById('audio').onload=function(){
+              setTimeout(function(){
+                  registerAudioHandler();
+                  Iodine.enableAudio();
+              },1000);
+          };
+          document.getElementById('audio').setAttribute("src","user_scripts/IodineGBAAudioGlueCode.js");
       }
   }
   </script>
