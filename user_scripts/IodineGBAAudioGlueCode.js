@@ -12,7 +12,7 @@ function GlueCodeMixer() {
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
                      //Disable audio in the callback here:
-                     parentObj.disableAudio();
+                     //parentObj.disableAudio();
     });
     this.outputUnits = [];
     this.outputUnitsValid = [];
