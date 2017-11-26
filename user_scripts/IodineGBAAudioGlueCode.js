@@ -18,6 +18,7 @@ function GlueCodeMixer(){
     setInterval(function(){parentObj.checkAudio();}, 16);
     this.initializeBuffer();
 }
+function GlueCodeMixerInput(mixer){this.mixer=mixer;}
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -82,7 +83,6 @@ GlueCodeMixer.prototype.findLowestBufferCount = function () {
 GlueCodeMixer.prototype.disableAudio = function () {
     this.audio = null;
 }
-function GlueCodeMixerInput(mixer){this.mixer = mixer;}
 GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
