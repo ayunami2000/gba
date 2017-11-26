@@ -15,4 +15,7 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 #touchpad div:nth-child(9){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:14%;height:17%;top:42%;left:0}
 #touchpad div:nth-child(10){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:12%;height:17%;top:42%;left:27%}
 #touchpad div:nth-child(11){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:10%;height:10%;bottom:2%;left:0}
-@media screen and (orientation:portrait){#touchpad{height:50%;top:50%;}canvas{bottom:50%;height:50%;}body:not(.mobile) canvas{top:25%;bottom:25%;}}
+#msg{transition:opacity 1s;pointer-events:none;background-color:purple;border:1em solid gray;color:white;border-radius:5%;position:absolute;top:25%;left:25%;right:25%;bottom:25%;width:50%;height:50%;}
+#overlay{background-color:rgba(0,0,0,0);background-repeat:no-repeat;background-position:center center;background-size:100% 100%;background-image:url();display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:100;}
+body:not(.mobile) #overlay{display:none;}
+@media screen and (orientation:portrait){.mobile #overlay{display:none;}#touchpad{height:50%;top:50%;}canvas{bottom:50%;height:50%;}body:not(.mobile) canvas{top:25%;bottom:25%;}}
