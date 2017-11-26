@@ -134,10 +134,23 @@
       return (value===1);
   }
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
-  document.querySelector("#touchpad").style.display="none";
-  document.body.classList.remove("mobile");
+      document.querySelector("#touchpad").style.display="none";
+      document.body.classList.remove("mobile");
   }
-  window.ontouchstart=function(){audioInit();registerAudioHandler();Iodine.enableAudio();};
+  if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){
+      window.ontouchstart=function(){
+          document.getElementById('audio').src="";
+          window.setTimeout(function(){
+              document.getElementById('audio').onload=function(){
+                  setTimeout(function(){
+                      registerAudioHandler();
+                      Iodine.enableAudio();
+                  },1000);
+              };
+              document.getElementById('audio').src="user_scripts/IodineGBAAudioGlueCode.js";
+          },500);
+      }
+  }
   </script>
   <span id="tempMessage"></span>
 </body>
