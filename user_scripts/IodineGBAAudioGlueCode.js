@@ -12,7 +12,7 @@ function GlueCodeMixer() {
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
       //ios or unsupported
-      if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){window.onclick=function(){audioInit();GlueCodeMixer();};}else{parentObj.disableAudio();}
+      if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){}else{parentObj.disableAudio();}
     });
     this.outputUnits = [];
     this.outputUnitsValid = [];
