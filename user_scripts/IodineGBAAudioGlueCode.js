@@ -1,3 +1,4 @@
+function startAudio(){
 "use strict";
 /*
  Copyright (C) 2012-2014 Grant Galitz
@@ -256,3 +257,5 @@ AudioSimpleBuffer.prototype.getSlice = function () {
         }
     }
 }
+}
+startAudio();
