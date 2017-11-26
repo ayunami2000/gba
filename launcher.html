@@ -76,6 +76,14 @@
   <div onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);"> </div>
   <div onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);"> </div>
   <div onclick="Iodine.paused?Iodine.play():Iodine.pause();"> </div>
+  </div>
+  <div id="msg" style="display:none;position:absolute;top:25%;left:25%;right:25%;bottom:25%;width:50%;height:50%;">
+      Controls:
+      <ul>
+          <li>A - X</li>
+      </ul>
+  </div>
+  <span id="tempMessage"></span>
   <script>
   function getVals(){
   var btnCoords=Object.values({
@@ -136,6 +144,15 @@
   if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
       document.querySelector("#touchpad").style.display="none";
       document.body.classList.remove("mobile");
+      window.onclick=function(){
+          if(Iodine.paused){
+              Iodine.play();
+              document.getElementById("msg").style.opacity="1";
+          }else{
+              document.getElementById("msg").style.opacity="0";
+              window.setTimeout(function(){Iodine.pause();},1000);
+          }
+      };
   }
   if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){
       window.onclick=function(){
@@ -150,6 +167,5 @@
       }
   }
   </script>
-  <span id="tempMessage"></span>
 </body>
 </html>
