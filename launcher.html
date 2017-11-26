@@ -153,13 +153,14 @@
   if(/ipad|iphone|ipod|android|windows phone/.test(navigator.userAgent.toLowerCase())){/*mobile*/}else{
       document.querySelector("#touchpad").style.display="none";
       document.body.classList.remove("mobile");
-      window.onclick=function(){
+      window.onclick=function(e){
+          e.preventDefault();
           if(Iodine.paused){
-              Iodine.play();
-              document.getElementById("msg").style.opacity="1";
-          }else{
               document.getElementById("msg").style.opacity="0";
-              window.setTimeout(function(){Iodine.pause();},1000);
+              window.setTimeout(function(){Iodine.play();},1000);
+          }else{
+              Iodine.pause();
+              document.getElementById("msg").style.opacity="1";
           }
       };
   }
