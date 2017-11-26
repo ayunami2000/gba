@@ -65,16 +65,16 @@
 <body class="mobile">
   <canvas id="emulator_target" width="240px" height="160px"></canvas>
   <div id="touchpad">
-  <div onmousedown="keyDownCode(49);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(49);"> </div>
-  <div onmousedown="keyDownCode(50);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(50);"> </div>
-  <div onmousedown="keyDownCode(16);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(16);"> </div>
-  <div onmousedown="keyDownCode(13);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(13);"> </div>
-  <div onmousedown="keyDownCode(88);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(88);"> </div>
-  <div onmousedown="keyDownCode(90);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(89);"> </div>
-  <div onmousedown="keyDownCode(38);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(38);"> </div>
-  <div onmousedown="keyDownCode(40);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(40);"> </div>
-  <div onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);"> </div>
-  <div onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(49);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(49);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(50);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(50);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(16);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(16);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(13);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(13);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(88);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(88);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(90);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(89);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(38);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(38);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(40);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(40);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(37);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(37);"> </div>
+  <div onmousedown="event.preventDefault();keyDownCode(39);" ontouchcancel="event.preventDefault();this.onmouseup();" ontouchstart="event.preventDefault();this.onmousedown();" ontouchend="event.preventDefault();this.onmouseup();" onmouseup="event.preventDefault();keyUp(39);"> </div>
   <div onclick="Iodine.paused?Iodine.play():Iodine.pause();"> </div>
   </div>
   <div id="msg" style="display:none;position:absolute;top:25%;left:25%;right:25%;bottom:25%;width:50%;height:50%;">
@@ -141,7 +141,7 @@
       arr.forEach(function(word){value+=str.includes(word);});
       return (value===1);
   }
-  if(navigator.platform.toLowerCase().oneOrMoreOf(["freebsd","linux","os/2","pocket pc","win","nintendo","openbsd","s60","symbian","palmos","webos","sunos","playstation","psp","hp-ux","masking-agent","webtv","x11"])){
+  if(/ipad|iphone|ipod|android|windows phone/.test(navigator.userAgent.toLowerCase())){/*mobile*/}else{
       document.querySelector("#touchpad").style.display="none";
       document.body.classList.remove("mobile");
       window.onclick=function(){
@@ -154,18 +154,7 @@
           }
       };
   }
-  if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){
-      window.onclick=function(){
-          document.getElementById('audio').removeAttribute("src");
-          document.getElementById('audio').onload=function(){
-              setTimeout(function(){
-                  registerAudioHandler();
-                  Iodine.enableAudio();
-              },1000);
-          };
-          document.getElementById('audio').setAttribute("src","user_scripts/IodineGBAAudioGlueCode.js");
-      }
-  }
+  if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){window.onclick=function(){/*load everything*/}}
   </script>
 </body>
 </html>
