@@ -75,7 +75,7 @@
   <div onmousedown="keyDownCode(40);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(40);"> </div>
   <div onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);"> </div>
   <div onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);"> </div>
-  <div onclick="registerAudioHandler();"> </div>
+  <div onclick="Iodine.paused?Iodine.play():Iodine.pause();"> </div>
   <script>
   function getVals(){
   var btnCoords=Object.values({
