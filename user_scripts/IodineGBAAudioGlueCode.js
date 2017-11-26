@@ -9,7 +9,7 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 var GlueCodeMixer=function(){
-    this=(new audioInit()).GlueCodeMixer;
+    //this=(new audioInit()).GlueCodeMixer;
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
       parentObj.audio=null;
@@ -19,9 +19,12 @@ var GlueCodeMixer=function(){
     setInterval(function(){parentObj.checkAudio();}, 16);
     this.initializeBuffer();
 }
-var GlueCodeMixerInput=function(mixer){this=(new audioInit()).GlueCodeMixerInput;this.mixer=mixer;}
+var GlueCodeMixerInput=function(mixer){
+ //this=(new audioInit()).GlueCodeMixerInput;
+ this.mixer=mixer;
+}
 var AudioBufferWrapper=function(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
-    this=(new audioInit()).AudioBufferWrapper;
+    //this=(new audioInit()).AudioBufferWrapper;
     this.channelCount = channelCount;
     this.mixerChannelCount = mixerChannelCount;
     this.bufferAmount = bufferAmount;
@@ -30,7 +33,7 @@ var AudioBufferWrapper=function(channelCount,mixerChannelCount,bufferAmount,samp
     this.initialize();
 }
 var AudioSimpleBuffer=function(channelCount,bufferAmount){
-    this=(new audioInit()).AudioSimpleBuffer;
+    //this=(new audioInit()).AudioSimpleBuffer;
     this.channelCount = channelCount;
     this.bufferAmount = bufferAmount;
     this.outBufferSize = this.channelCount * this.bufferAmount;
