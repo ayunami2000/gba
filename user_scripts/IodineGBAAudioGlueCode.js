@@ -20,7 +20,8 @@ function GlueCodeMixer() {
     this.initializeBuffer();
 }
 audioInit();
-function audioInit(){try{eval('
+function audioInit(){audioInitA();audioInitB();audioInitC();audioInitD();}
+function audioInitA(){
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -85,9 +86,11 @@ GlueCodeMixer.prototype.findLowestBufferCount = function () {
 GlueCodeMixer.prototype.disableAudio = function () {
     this.audio = null;
 }
+}
 function GlueCodeMixerInput(mixer) {
     this.mixer = mixer;
 }
+function audioInitB(){
 GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
@@ -126,6 +129,7 @@ GlueCodeMixerInput.prototype.registerStackPosition = function (stackPosition) {
 GlueCodeMixerInput.prototype.unregister = function () {
     this.mixer.unregister(this.stackPosition);
 }
+}
 function AudioBufferWrapper(channelCount,
                             mixerChannelCount,
                             bufferAmount,
@@ -138,6 +142,7 @@ function AudioBufferWrapper(channelCount,
     this.mixerSampleRate = mixerSampleRate;
     this.initialize();
 }
+function audioInitC(){
 AudioBufferWrapper.prototype.initialize = function () {
     this.inBufferSize = this.bufferAmount * this.mixerChannelCount;
     this.inBuffer = getFloat32Array(this.inBufferSize);
@@ -227,6 +232,7 @@ AudioBufferWrapper.prototype.getSlice = function (buffer, lengthOf) {
         }
     }
 }
+}
 function AudioSimpleBuffer(channelCount, bufferAmount) {
     this.channelCount = channelCount;
     this.bufferAmount = bufferAmount;
@@ -234,6 +240,7 @@ function AudioSimpleBuffer(channelCount, bufferAmount) {
     this.stackLength = 0;
     this.buffer = getFloat32Array(this.outBufferSize);
 }
+function audioInitD(){
 AudioSimpleBuffer.prototype.push = function (data) {
     if (this.stackLength < this.outBufferSize) {
         this.buffer[this.stackLength++] = data;
@@ -258,4 +265,4 @@ AudioSimpleBuffer.prototype.getSlice = function () {
         }
     }
 }
-');}catch(e){alert(e);}}
+}
