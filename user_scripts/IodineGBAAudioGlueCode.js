@@ -22,8 +22,7 @@ GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
 GlueCodeMixer.prototype.initializeBuffer = function () {
-    this.buffer = new AudioSimpleBuffer(this.channelCount,
-                                         this.bufferAmount);
+    this.buffer = new AudioSimpleBuffer(this.channelCount,this.bufferAmount);
 }
 GlueCodeMixer.prototype.appendInput = function (inUnit) {
     if (this.audio) {
@@ -83,14 +82,14 @@ GlueCodeMixer.prototype.disableAudio = function () {
     this.audio = null;
 }
 function GlueCodeMixerInput(mixer){this.mixer = mixer;}
-GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {
+GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {try{
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
     this.bufferAmount = bufferAmount;
     this.volume = startingVolume;
     this.errorCallback = errorCallback;
     this.buffer = new AudioBufferWrapper(this.channelCount,this.mixer.channelCount,this.bufferAmount,this.sampleRate,this.mixer.sampleRate);
-}
+}catch(e){alert(e);}}
 GlueCodeMixerInput.prototype.register = function (volume) {
     this.mixer.appendInput(this);
 }
