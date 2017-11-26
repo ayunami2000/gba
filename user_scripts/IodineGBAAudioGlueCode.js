@@ -20,7 +20,7 @@ function GlueCodeMixer() {
     this.initializeBuffer();
 }
 audioInit();
-function audioInit(){
+function audioInit(){try{eval('
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -258,4 +258,4 @@ AudioSimpleBuffer.prototype.getSlice = function () {
         }
     }
 }
-}
+');}catch(e){alert(e);}}
