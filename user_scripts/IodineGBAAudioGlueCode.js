@@ -19,6 +19,14 @@ function GlueCodeMixer(){
     this.initializeBuffer();
 }
 function GlueCodeMixerInput(mixer){this.mixer=mixer;}
+function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
+    this.channelCount = channelCount;
+    this.mixerChannelCount = mixerChannelCount;
+    this.bufferAmount = bufferAmount;
+    this.sampleRate = sampleRate;
+    this.mixerSampleRate = mixerSampleRate;
+    this.initialize();
+}
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -120,14 +128,6 @@ GlueCodeMixerInput.prototype.registerStackPosition = function (stackPosition) {
 }
 GlueCodeMixerInput.prototype.unregister = function () {
     this.mixer.unregister(this.stackPosition);
-}
-function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
-    this.channelCount = channelCount;
-    this.mixerChannelCount = mixerChannelCount;
-    this.bufferAmount = bufferAmount;
-    this.sampleRate = sampleRate;
-    this.mixerSampleRate = mixerSampleRate;
-    this.initialize();
 }
 AudioBufferWrapper.prototype.initialize = function () {
     this.inBufferSize = this.bufferAmount * this.mixerChannelCount;
