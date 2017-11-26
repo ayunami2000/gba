@@ -15,6 +15,7 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 #touchpad div:nth-child(9){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:14%;height:17%;top:42%;left:0}
 #touchpad div:nth-child(10){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:12%;height:17%;top:42%;left:27%}
 #touchpad div:nth-child(11){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:10%;height:10%;bottom:2%;left:0}
+#touchpad div:nth-child(12){display:none;}
 #msg{transition:opacity 1s;pointer-events:none;background-color:purple;border:1em solid gray;color:white;border-radius:5%;position:absolute;top:25%;left:25%;right:25%;bottom:25%;width:50%;height:50%;}
 #overlay{opacity:0;pointer-events:none;background-color:rgba(0,0,0,0);background-repeat:no-repeat;background-position:center center;background-size:100% 100%;background-image:url(../delta-emulator-controls.png);display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:100;}
 .mobile #overlay{opacity:1;}
@@ -36,4 +37,5 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 #touchpad div:nth-child(9){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:10vw;height:15vh;top:65vh;left:0vw;}
 #touchpad div:nth-child(10){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:7vw;height:15vh;top:65vh;left:19vw;}
 #touchpad div:nth-child(11){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:14vh;top:0vh;left:44vw;}
+#touchpad div:nth-child(12){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:14vw;height:20vh;top:80vh;left:86vw;}
 }
