@@ -89,12 +89,7 @@ GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bu
     this.bufferAmount = bufferAmount;
     this.volume = startingVolume;
     this.errorCallback = errorCallback;
-    this.buffer = new AudioBufferWrapper(this.channelCount,
-                                         this.mixer.channelCount,
-                                         this.bufferAmount,
-                                         this.sampleRate,
-                                         this.mixer.sampleRate);
-    
+    this.buffer = new AudioBufferWrapper(this.channelCount,this.mixer.channelCount,this.bufferAmount,this.sampleRate,this.mixer.sampleRate);
 }
 GlueCodeMixerInput.prototype.register = function (volume) {
     this.mixer.appendInput(this);
