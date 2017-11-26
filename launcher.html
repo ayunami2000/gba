@@ -152,9 +152,9 @@
       return (value===1);
   }
   if(/ipad|iphone|ipod|android|windows phone/.test(navigator.userAgent.toLowerCase())){/*mobile*/}else{
-      document.querySelector("#touchpad").style.display="none";
+      document.getElementById("touchpad").style.display="none";
       document.body.classList.remove("mobile");
-      window.onclick=function(e){
+      document.getElementById("overlay").onclick=function(e){
           e.preventDefault();
           if(Iodine.paused){
               document.getElementById("msg").style.opacity="0";
