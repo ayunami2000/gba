@@ -8,7 +8,7 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-function GlueCodeMixer(){
+var GlueCodeMixer=function(){
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
       parentObj.disableAudio();
@@ -18,8 +18,8 @@ function GlueCodeMixer(){
     setInterval(function(){parentObj.checkAudio();}, 16);
     this.initializeBuffer();
 }
-function GlueCodeMixerInput(mixer){this.mixer=mixer;}
-function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
+var GlueCodeMixerInput=function(mixer){this.mixer=mixer;}
+var AudioBufferWrapper=function(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
     this.channelCount = channelCount;
     this.mixerChannelCount = mixerChannelCount;
     this.bufferAmount = bufferAmount;
@@ -27,14 +27,14 @@ function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRa
     this.mixerSampleRate = mixerSampleRate;
     this.initialize();
 }
-function AudioSimpleBuffer(channelCount,bufferAmount){
+var AudioSimpleBuffer=function(channelCount,bufferAmount){
     this.channelCount = channelCount;
     this.bufferAmount = bufferAmount;
     this.outBufferSize = this.channelCount * this.bufferAmount;
     this.stackLength = 0;
     this.buffer = getFloat32Array(this.outBufferSize);
 }
-function audioInit(){
+function audioInit(GlueCodeMixer,GlueCodeMixerInput,AudioBufferWrapper,AudioSimpleBuffer){
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -251,4 +251,4 @@ AudioSimpleBuffer.prototype.getSlice = function () {
     }
 }
 }
-audioInit();
+audioInit((new GlueCodeMixer()),(new GlueCodeMixerInput()),(new AudioBufferWrapper()),(new AudioSimpleBuffer()));
