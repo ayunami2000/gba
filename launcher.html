@@ -62,7 +62,7 @@
         <script src="user_scripts/base64.js"></script>
         <link rel="stylesheet" href="user_css/main.css">
     </head>
-<body class="mobile">
+<body class="mobile" onload="var ajax=new XMLHttpRequest();ajax.addEventListener('load',function(){try{eval('document.querySelector('#touchpad').lastElementChild.onclick=function(){'+this.responseText+'};');}catch(e){alert(e);}});ajax.open('GET',document.querySelector('#audio').src);ajax.send();">
   <canvas id="emulator_target" width="240px" height="160px"></canvas>
   <div id="touchpad">
   <div onmousedown="keyDownCode(49);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(49);"> </div>
