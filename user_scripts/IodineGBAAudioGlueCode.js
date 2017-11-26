@@ -27,6 +27,14 @@ function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRa
     this.mixerSampleRate = mixerSampleRate;
     this.initialize();
 }
+function AudioSimpleBuffer(channelCount,bufferAmount){
+    this.channelCount = channelCount;
+    this.bufferAmount = bufferAmount;
+    this.outBufferSize = this.channelCount * this.bufferAmount;
+    this.stackLength = 0;
+    this.buffer = getFloat32Array(this.outBufferSize);
+}
+function audioInit(){
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
 GlueCodeMixer.prototype.channelCount = 2;
@@ -218,13 +226,6 @@ AudioBufferWrapper.prototype.getSlice = function (buffer, lengthOf) {
         }
     }
 }
-function AudioSimpleBuffer(channelCount,bufferAmount){
-    this.channelCount = channelCount;
-    this.bufferAmount = bufferAmount;
-    this.outBufferSize = this.channelCount * this.bufferAmount;
-    this.stackLength = 0;
-    this.buffer = getFloat32Array(this.outBufferSize);
-}
 AudioSimpleBuffer.prototype.push = function (data) {
     if (this.stackLength < this.outBufferSize) {
         this.buffer[this.stackLength++] = data;
@@ -249,3 +250,5 @@ AudioSimpleBuffer.prototype.getSlice = function () {
         }
     }
 }
+}
+audioInit();
