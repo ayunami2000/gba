@@ -125,14 +125,12 @@ window.onload = function () {
     Iodine = new GameBoyAdvanceEmulator();
     //Initialize the graphics:
     registerBlitterHandler();
-    //Initialize the audio:
-    registerAudioHandler();
     //Register the save handler callbacks:
     registerSaveHandlers();
     //Hook the GUI controls.
     registerGUIEvents();
-    //Enable Sound:
-    Iodine.enableAudio();
+    //Initialize the audio and enable sound:
+    if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){window.onclick=function(){registerAudioHandler();Iodine.enableAudio();}}else{registerAudioHandler();Iodine.enableAudio();}
     //Download the BIOS:
     downloadBIOS();
 }
@@ -151,7 +149,6 @@ function downloadROM(gamename) {
 function registerROM() {
     clearTempString();
     processDownload(this, attachROM);
-    if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){/*Iodine.disableAudio();*/}
     Iodine.play();
 }
 function registerBlitterHandler() {
