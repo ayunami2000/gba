@@ -24,16 +24,16 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
   canvas{bottom:50%;height:50%;}
   body:not(.mobile) canvas{top:25%;bottom:25%;}
 }
-@media screen and (orientation:landscape){/*
-#touchpad div:nth-child(1){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(2){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(3){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;bottom:%;left:%}
-#touchpad div:nth-child(4){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;bottom:%;left:%}
-#touchpad div:nth-child(5){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(6){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(7){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(8){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(9){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(10){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;top:%;left:%}
-#touchpad div:nth-child(11){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:%;height:%;bottom:%;left:%}
-*/}
+@media screen and (orientation:landscape){
+#touchpad div:nth-child(1){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:18vw;height:18vh;top:0vh;left:0vw;}
+#touchpad div:nth-child(2){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:18vw;height:18vh;top:0vh;left:81vw;}
+#touchpad div:nth-child(3){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:14vh;top:85vh;left:36vw;}
+#touchpad div:nth-child(4){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:14vh;top:85vh;left:51vw;}
+#touchpad div:nth-child(5){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:14vw;height:21vh;top:58vh;left:85vw;}
+#touchpad div:nth-child(6){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:25vh;top:75vh;left:73vw;}
+#touchpad div:nth-child(7){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:9vw;height:14vh;top:50vh;left:10vw;}
+#touchpad div:nth-child(8){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:9vw;height:14vh;top:81vh;left:10vw;}
+#touchpad div:nth-child(9){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:10vw;height:15vh;top:65vh;left:0vw;}
+#touchpad div:nth-child(10){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:7vw;height:15vh;top:65vh;left:19vw;}
+#touchpad div:nth-child(11){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:14vh;top:0vh;left:44vw;}
+}
