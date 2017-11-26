@@ -75,7 +75,7 @@
   <div onmousedown="keyDownCode(40);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(40);"> </div>
   <div onmousedown="keyDownCode(37);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(37);"> </div>
   <div onmousedown="keyDownCode(39);" ontouchcancel="this.onmouseup();" ontouchstart="this.onmousedown();" ontouchend="this.onmouseup();" onmouseup="keyUp(39);"> </div>
-  <div onclick="audioInit((new GlueCodeMixer()),(new GlueCodeMixerInput()),(new AudioBufferWrapper()),(new AudioSimpleBuffer()));GlueCodeMixer();"> </div>
+  <div onclick="registerAudioHandler();"> </div>
   <script>
   function getVals(){
   var btnCoords=Object.values({
@@ -137,6 +137,7 @@
   document.querySelector("#touchpad").style.display="none";
   document.body.classList.remove("mobile");
   }
+  window.ontouchstart=function(){registerAudioHandler();};
   </script>
   <span id="tempMessage"></span>
 </body>
