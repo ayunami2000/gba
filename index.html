@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>GameBoyAdvance Online</title>
+        <title>GBA Emulator</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
     <body>
-        <h2>Select A Game:</h2>
+        <h2>Select a Game:</h2>
         <ul>
+            <li>Custom Game: <input type="text" placeholder="URL" onchange="window.location.href='./launcher.html#'+encodeURIComponent(this.value);"/></li>
             <li><a href="./launcher.html#advancewars">Advance Wars</a></li>
             <li><a href="./launcher.html#advancewars2">Advance Wars 2</a></li>
             <li><a href="./launcher.html#aladdin">Aladdin</a></li>
