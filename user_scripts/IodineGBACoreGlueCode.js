@@ -117,7 +117,7 @@ var Mixer = null;
 var MixerInput = null;
 var timerID = null;
 window.onload = function () {
-    if(!location.href.includes("#")){window.location="/gba/";return;}
+    if(window.location.hash){window.location="/gba/";return;}
     if (!games[location.hash.substr(1)]) {
         alert("Error: User defined ROMs are not supported at this time.");
         return;
