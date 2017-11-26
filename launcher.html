@@ -157,7 +157,7 @@
           e.preventDefault();
           if(Iodine.paused){
               document.getElementById("msg").style.opacity="0";
-              window.setTimeout(function(){Iodine.play();},500);
+              Iodine.play();
           }else{
               Iodine.pause();
               document.getElementById("msg").style.opacity="1";
