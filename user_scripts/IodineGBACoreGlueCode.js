@@ -161,8 +161,8 @@ function registerBlitterHandler() {
     Iodine.attachGraphicsFrameHandler(function (buffer) {Blitter.copyBuffer(buffer);});
 }
 function registerAudioHandler() {
-    Mixer = new GlueCodeMixer();
-    MixerInput = new GlueCodeMixerInput(Mixer);
+    Mixer = new (new audioInit()).GlueCodeMixer();
+    MixerInput = new (new audioInit()).GlueCodeMixerInput(Mixer);
     Iodine.attachAudioHandler(MixerInput);
 }
 function registerGUIEvents() {
