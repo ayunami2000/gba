@@ -8,7 +8,6 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-function audioInit(){
 function GlueCodeMixer(){
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
@@ -83,9 +82,7 @@ GlueCodeMixer.prototype.findLowestBufferCount = function () {
 GlueCodeMixer.prototype.disableAudio = function () {
     this.audio = null;
 }
-function GlueCodeMixerInput(mixer) {
-    this.mixer = mixer;
-}
+function GlueCodeMixerInput(mixer){this.mixer = mixer;}
 GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
@@ -124,11 +121,7 @@ GlueCodeMixerInput.prototype.registerStackPosition = function (stackPosition) {
 GlueCodeMixerInput.prototype.unregister = function () {
     this.mixer.unregister(this.stackPosition);
 }
-function AudioBufferWrapper(channelCount,
-                            mixerChannelCount,
-                            bufferAmount,
-                            sampleRate,
-                            mixerSampleRate) {
+function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
     this.channelCount = channelCount;
     this.mixerChannelCount = mixerChannelCount;
     this.bufferAmount = bufferAmount;
@@ -225,7 +218,7 @@ AudioBufferWrapper.prototype.getSlice = function (buffer, lengthOf) {
         }
     }
 }
-function AudioSimpleBuffer(channelCount, bufferAmount) {
+function AudioSimpleBuffer(channelCount,bufferAmount){
     this.channelCount = channelCount;
     this.bufferAmount = bufferAmount;
     this.outBufferSize = this.channelCount * this.bufferAmount;
@@ -256,5 +249,3 @@ AudioSimpleBuffer.prototype.getSlice = function () {
         }
     }
 }
-}
-audioInit();
