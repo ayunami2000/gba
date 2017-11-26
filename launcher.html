@@ -137,7 +137,7 @@
   document.querySelector("#touchpad").style.display="none";
   document.body.classList.remove("mobile");
   }
-  window.ontouchstart=function(){registerAudioHandler();Iodine.enableAudio();};
+  window.ontouchstart=function(){AudioBufferWrapper.initialize();GlueCodeMixerInput.initialize();registerAudioHandler();Iodine.enableAudio();};
   </script>
   <span id="tempMessage"></span>
 </body>
