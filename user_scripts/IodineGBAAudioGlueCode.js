@@ -11,7 +11,7 @@
 var GlueCodeMixer=function(){
     var parentObj = this;
     this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
-      parentObj.disableAudio();
+      parentObj.audio=null;
     });
     this.outputUnits = [];
     this.outputUnitsValid = [];
@@ -96,9 +96,7 @@ GlueCodeMixer.prototype.findLowestBufferCount = function () {
     }
     return count;
 }
-GlueCodeMixer.prototype.disableAudio = function () {
-    this.audio = null;
-}
+GlueCodeMixer.prototype.disableAudio = function () {this.audio = null;}
 GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
