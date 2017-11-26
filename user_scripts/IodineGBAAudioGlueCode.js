@@ -8,15 +8,16 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+function audioInit(){
+if(typeof GlueCodeMixer!=="function"){
 function GlueCodeMixer(){
     var parentObj = this;
-    this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {
-      parentObj.disableAudio();
-    });
+    this.audio = new XAudioServer(2, this.sampleRate, 0, this.bufferAmount, null, 1, function () {parentObj.disableAudio();});
     this.outputUnits = [];
     this.outputUnitsValid = [];
     setInterval(function(){parentObj.checkAudio();}, 16);
     this.initializeBuffer();
+}
 }
 GlueCodeMixer.prototype.sampleRate = 44100;
 GlueCodeMixer.prototype.bufferAmount = 44100;
@@ -81,7 +82,9 @@ GlueCodeMixer.prototype.findLowestBufferCount = function () {
 GlueCodeMixer.prototype.disableAudio = function () {
     this.audio = null;
 }
+if(typeof GlueCodeMixerInput!=="function"){
 function GlueCodeMixerInput(mixer){this.mixer = mixer;}
+}
 GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bufferAmount, startingVolume, errorCallback) {try{
     this.channelCount = channelCount;
     this.sampleRate = sampleRate;
@@ -115,6 +118,7 @@ GlueCodeMixerInput.prototype.registerStackPosition = function (stackPosition) {
 GlueCodeMixerInput.prototype.unregister = function () {
     this.mixer.unregister(this.stackPosition);
 }
+if(typeof AudioBufferWrapper!=="function"){
 function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
     this.channelCount = channelCount;
     this.mixerChannelCount = mixerChannelCount;
@@ -122,6 +126,7 @@ function AudioBufferWrapper(channelCount,mixerChannelCount,bufferAmount,sampleRa
     this.sampleRate = sampleRate;
     this.mixerSampleRate = mixerSampleRate;
     this.initialize();
+}
 }
 AudioBufferWrapper.prototype.initialize = function () {
     this.inBufferSize = this.bufferAmount * this.mixerChannelCount;
@@ -212,12 +217,14 @@ AudioBufferWrapper.prototype.getSlice = function (buffer, lengthOf) {
         }
     }
 }
+if(typeof AudioSimpleBuffer!=="function"){
 function AudioSimpleBuffer(channelCount,bufferAmount){
     this.channelCount = channelCount;
     this.bufferAmount = bufferAmount;
     this.outBufferSize = this.channelCount * this.bufferAmount;
     this.stackLength = 0;
     this.buffer = getFloat32Array(this.outBufferSize);
+}
 }
 AudioSimpleBuffer.prototype.push = function (data) {
     if (this.stackLength < this.outBufferSize) {
@@ -242,4 +249,5 @@ AudioSimpleBuffer.prototype.getSlice = function () {
             return this.buffer.slice(0, lengthOf);
         }
     }
+}
 }
