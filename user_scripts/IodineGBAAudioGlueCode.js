@@ -16,7 +16,7 @@ var GlueCodeMixer=function(){
     this.outputUnits = [];
     this.outputUnitsValid = [];
     setInterval(function(){parentObj.checkAudio();}, 16);
-    this.initializeBuffer();
+    (new this()).initializeBuffer();
 }
 var GlueCodeMixerInput=function(mixer){this.mixer=mixer;}
 var AudioBufferWrapper=function(channelCount,mixerChannelCount,bufferAmount,sampleRate,mixerSampleRate){
