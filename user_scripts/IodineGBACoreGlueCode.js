@@ -117,8 +117,9 @@ var Mixer = null;
 var MixerInput = null;
 var timerID = null;
 window.onload = function () {
+    if(!location.href.includes("#")){window.location="/gba/";return;}
     if (!games[location.hash.substr(1)]) {
-        alert("Invalid game request!");
+        alert("Error: User defined ROMs are not supported at this time.");
         return;
     }
     //Initialize Iodine:
