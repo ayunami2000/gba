@@ -96,55 +96,6 @@
   <div id="overlay"> </div>
   <span id="tempMessage"></span>
   <script>
-  function getVals(){
-  var btnCoords=Object.values({
-    "L":{
-      "x":[0,185],
-      "y":[20,60]
-    },
-    "R":{
-      "x":[564,749],
-      "y":[20,60]
-    },
-    "SELECT":{
-      "x":[282,326],
-      "y":[305,564]
-    },
-    "START":{
-      "x":[422,466],
-      "y":[305,564]
-    },
-    "A":{
-      "x":[610,749],
-      "y":[200,325]
-    },
-    "B":{
-      "x":[444,566],
-      "y":[270,400]
-    },
-    "UP":{
-      "x":[100,208],
-      "y":[145,240]
-    },
-    "DOWN":{
-      "x":[100,208],
-      "y":[340,435]
-    },
-    "LEFT":{
-      "x":[0,106],
-      "y":[240,340]
-    },
-    "RIGHT":{
-      "x":[206,300],
-      "y":[240,340]
-    },
-    "MENU":{
-      "x":[0,75],
-      "y":[305,564]
-    }
-  });
-  for(var i=0;i<11;i++){alert("width:"+parseInt(100*((btnCoords[i]["x"][1]-btnCoords[i]["x"][0])/749))+"vw;height:"+parseInt(100*((btnCoords[i]["y"][1]-btnCoords[i]["y"][0])/564))+";top:"+parseInt(100*(btnCoords[i]["y"][0]/564))+"vh;left:"+parseInt(100*(btnCoords[i]["x"][0]/749))+"vw;");}
-  }
   String.prototype.oneOrMoreOf=function(arr){
       'use strict';
       var str=this;
