@@ -154,7 +154,7 @@
   if(/ipad|iphone|ipod|android|windows phone/.test(navigator.userAgent.toLowerCase())){/*mobile*/}else{
       document.getElementById("touchpad").style.display="none";
       document.body.classList.remove("mobile");
-      document.getElementById("overlay").onclick=function(e){
+      document.body.onclick=function(e){
           e.preventDefault();
           if(Iodine.paused){
               document.getElementById("msg").style.opacity="0";
