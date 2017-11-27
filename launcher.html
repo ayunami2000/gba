@@ -114,7 +114,6 @@
       return (value===1);
   }
   if(/ipad|iphone|ipod|android|windows phone/.test(navigator.userAgent.toLowerCase())){}else{
-      document.getElementById("touchpad").style.display="none";
       document.body.classList.remove("mobile");
       document.body.onclick=function(e){
           e.preventDefault();
