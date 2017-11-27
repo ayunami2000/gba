@@ -1,6 +1,6 @@
 *{font-family:Verdana,"Verdana",Helvetica,"Helvetica",Arial,"Arial";}
 html,body{margin:0;width:100%;height:100%;padding:0;margin:0;}
-body{background-color:black;background-repeat:no-repeat;background-position:center bottom;background-size:100% 50%;}
+body{background-color:black;}
 body{position:fixed;width:100%;}
 .mobile{background-image:url(../delta-emulator-controls.jpg);}
 canvas{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
@@ -23,7 +23,7 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 #overlay{opacity:0;pointer-events:none;background-color:rgba(0,0,0,0);background-repeat:no-repeat;background-position:center center;background-size:100% 100%;background-image:url(../delta-emulator-controls.png);display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:100;}
 .mobile #overlay{opacity:0.5;}
 @media screen and (orientation:portrait){
-.mobile #overlay{display:none;}
+.mobile #overlay{opacity:1;background-image:url(../delta-emulator-controls.jpg);background-position:center bottom;background-size:100% 50%;}
 #touchpad{height:50%;top:50%;}
 canvas{bottom:50%;height:50%;}
 body:not(.mobile) canvas{top:25%;bottom:25%;}
