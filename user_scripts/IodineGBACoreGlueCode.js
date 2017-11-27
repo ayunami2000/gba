@@ -94,6 +94,7 @@ var games = {
     "supermarioadvance3":"Super Mario Advance 3",
     "supermarioadvance4":"Super Mario Advance 4",
     "simpsons":"The Simpsons: Road Rage",
+    "shi_kong_xing_shou":"Shi Kong Xing Shou [BOOTLEG]",
     "sonicpinball":"Sonic Pinball",
     "super_street_fighter_2_turbo_revival":"Super Street Fighter II: Turbo Revival",
     "super_street_fighter_3_alpha":"Super Street Fighter III: Alpha",
