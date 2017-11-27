@@ -132,10 +132,10 @@ window.onload = function () {
     registerGUIEvents();
     //Initialize the audio and enable sound:
     if(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream){
-        window.ontouchstart=function(){
+        window.onclick=function(){
             registerAudioHandler();
             Iodine.enableAudio();
-            this.ontouchstart=function(event){};
+            this.onclick=function(event){};
         }
     }else{
         registerAudioHandler();
