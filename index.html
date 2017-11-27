@@ -2,15 +2,12 @@
 <html>
     <head>
         <script>
-            var a=document.getElementsByTagName("a");
-for(var i=0;i<a.length;i++)
-{
-    a[i].onclick=function()
-    {
-        window.location=this.getAttribute("href");
-        return false;
-    }
-}
+          for(var i=0;i<document.querySelectorAll("a").length;i++){
+            document.querySelectorAll("a")[i].onclick=function(e){
+              e.preventDefault();
+              window.open(this.getAttribute("href"),"_self");
+            }
+          }
         </script>
         <title>GBA Emulator</title>
         <meta charset="UTF-8">
