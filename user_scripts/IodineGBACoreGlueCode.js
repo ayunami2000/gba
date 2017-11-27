@@ -88,6 +88,7 @@ var games = {
     "sonicbattle":"Sonic Battle",
     "supermonkeyballjr":"Super Monkey Ball Jr",
     "superstar":"Mario & Luigi: Superstar Saga",
+    "nes_smb":"Classic NES Super Mario Bros.",
     "supermarioadvance":"Super Mario Advance",
     "supermarioadvance2":"Super Mario Advance 2",
     "supermarioadvance3":"Super Mario Advance 3",
