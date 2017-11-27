@@ -1,7 +1,6 @@
 *{font-family:Verdana,"Verdana",Helvetica,"Helvetica",Arial,"Arial";}
 html,body{margin:0;width:100%;height:100%;padding:0;margin:0;}
-body{background-color:black;}
-body{position:fixed;width:100%;}
+body{background-color:black;position:fixed;width:100%;}
 canvas{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;font-weight:bold;text-align:right;vertical-align:bottom;font-family:monospace;display:none;}
 #touchpad{display:none;padding:0;margin:0;border:0;position:absolute;width:100%;height:100%;top:0;left:0;right:0;bottom:0;}
