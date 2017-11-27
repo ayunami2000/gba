@@ -1,7 +1,6 @@
 *{font-family:Verdana,"Verdana",Helvetica,"Helvetica",Arial,"Arial";}
-html,body{overflow:hidden;padding:0;margin:0;}
-html{width:100%;height:100%;}
-body{width:100vw;height:100vh;background-color:black;background-repeat:no-repeat;background-position:center bottom;background-size:100% 50%;}
+html,body{width:100%;height:100%;overflow:hidden;padding:0;margin:0;}
+body{background-color:black;background-repeat:no-repeat;background-position:center bottom;background-size:100% 50%;}
 .mobile{background-image:url(../delta-emulator-controls.jpg);}
 canvas{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;font-weight:bold;text-align:right;vertical-align:bottom;font-family:monospace;display:none;}
