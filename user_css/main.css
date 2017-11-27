@@ -22,14 +22,12 @@ span{color:red;bottom:0;position:absolute;right:0;display:none;font-size:1em;fon
 #overlay{opacity:0;pointer-events:none;background-color:rgba(0,0,0,0);background-repeat:no-repeat;background-position:center center;background-size:100% 100%;background-image:url(../delta-emulator-controls.png);display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:100;}
 .mobile #overlay{opacity:1;}
 @media screen and (orientation:portrait){
-.mobile #touchpad{height:50%;top:50%;}
 .mobile #overlay{display:none;}
 #touchpad{height:50%;top:50%;}
 canvas{bottom:50%;height:50%;}
 body:not(.mobile) canvas{top:25%;bottom:25%;}
 }
 @media screen and (orientation:landscape){
-.mobile #touchpad{height:100%;top:0;}
 #touchpad div:nth-child(1){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:18vw;height:18vh;top:0vh;left:0vw;}
 #touchpad div:nth-child(2){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:18vw;height:18vh;top:0vh;left:81vw;}
 #touchpad div:nth-child(3){cursor:pointer;padding:0;margin:0;border:0;position:absolute;width:11vw;height:14vh;top:85vh;left:36vw;}
