@@ -108,6 +108,7 @@ var games = {
     "turok_evolution":"Turok Evolution",
     "warioland4":"Wario Land 4",
     "wario_ware":"Wario Ware Inc",
+    "v-ralley_3":"V-Ralley 3",
     "zelda_past":"The Legend of Zelda: A Link to the Past",
     "zelda_minish":"The Legend of Zelda: The Minish Cap"
 };
@@ -120,6 +121,7 @@ window.onload = function () {
     if(!window.location.hash){window.location="/gba/";return;}
     if (!games[location.hash.substr(1)]) {
         alert("Error: User defined ROMs are not supported at this time.");
+        window.location="/gba/";
         return;
     }
     //Initialize Iodine:
@@ -153,7 +155,7 @@ function registerBIOS() {
 }
 function downloadROM(gamename) {
     Iodine.pause();
-    showTempString("Downloading \"" + games[gamename] + ".\"");
+    showTempString("Downloading \"" + games[gamename] + "\"");
     downloadFile("Binaries/" + gamename + ".gba", registerROM);
 }
 function registerROM() {
