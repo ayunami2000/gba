@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-          for(var i=0;i<document.querySelectorAll("a").length;i++){
-            document.querySelectorAll("a")[i].onclick=function(e){
-              e.preventDefault();
-              window.open(this.getAttribute("href"),"_self");
-            }
-          }
-        </script>
         <title>GBA Emulator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -22,6 +14,7 @@
         <link rel="apple-touch-icon" href="deltaIcon.png">
         <link rel="apple-touch-startup-image" href="deltaSplash.jpg" media="(orientation: portrait)">
         <link rel="apple-touch-startup-image" href="deltaSplash.png" media="(orientation: landscape)">
+        <style>body,html{background-color:black;color:purple;}</style>
     </head>
     <body>
         <h2>Select a Game:</h2>
@@ -121,5 +114,13 @@
             <li><a href="./launcher.html#zelda_past">The Legend of Zelda: A Link to the Past</a></li>
             <li><a href="./launcher.html#zelda_minish">The Legend of Zelda: The Minish Cap</a></li>
         </ul>
+        <script>
+          for(var i=0;i<document.querySelectorAll("a").length;i++){
+            document.querySelectorAll("a")[i].onclick=function(e){
+              e.preventDefault();
+              window.open(this.getAttribute("href"),"_self");
+            }
+          }
+        </script>
     </body>
 </html>
