@@ -130,7 +130,7 @@
   var btns=document.querySelectorAll("#touchpad div");
   function is_overlap(el,left,top){return top>=el.offsetTop&&left>=el.offsetLeft&&left<=(el.offsetLeft+el.offsetWidth)&&top<=(el.offsetTop+el.offsetHeight);}
   window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<btns.length;i++){btns[i].ontouchend(e);}}
-  for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(e){for(var i=0;i<btns.length;i++){if(this!=btns[i]&&is_overlap(btns[i],e.pageX,e.pageY)){this.ontouchend(e);btns[i].ontouchstart(e);}else{this!=btns[i]&&btns[i].ontouchend(e);}}}}
+  for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(e){for(var i=0;i<btns.length;i++){if(this!=btns[i]&&is_overlap(btns[i],e.clientX,e.clientY)){this.ontouchend(e);btns[i].ontouchstart(e);}else{this!=btns[i]&&btns[i].ontouchend(e);}}}}
     </script>
 </body>
 </html>
