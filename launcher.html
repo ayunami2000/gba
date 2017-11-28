@@ -85,7 +85,7 @@
   <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" onmousedown="event.preventDefault();keyDownCode(40);" ontouchcancel="event.preventDefault();this.onmouseup(event);" ontouchstart="event.preventDefault();this.onmousedown(event);" ontouchend="event.preventDefault();this.onmouseup(event);" onmouseup="event.preventDefault();keyUp(40);"> </div>
   <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" onmousedown="event.preventDefault();keyDownCode(37);" ontouchcancel="event.preventDefault();this.onmouseup(event);" ontouchstart="event.preventDefault();this.onmousedown(event);" ontouchend="event.preventDefault();this.onmouseup(event);" onmouseup="event.preventDefault();keyUp(37);"> </div>
   <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" onmousedown="event.preventDefault();keyDownCode(39);" ontouchcancel="event.preventDefault();this.onmouseup(event);" ontouchstart="event.preventDefault();this.onmousedown(event);" ontouchend="event.preventDefault();this.onmouseup(event);" onmouseup="event.preventDefault();keyUp(39);"> </div>
-  <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" onclick="Iodine.paused?Iodine.play():Iodine.pause();"> </div>
+  <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" ontouchend="" onclick="Iodine.paused?Iodine.play():Iodine.pause();"> </div>
   <div ontouchleave="this.ontouchend(event);" ontouchenter="this.ontouchstart(event);" onmousedown="event.preventDefault();keyDownCode(88);keyDownCode(90);" ontouchcancel="event.preventDefault();this.onmouseup(event);" ontouchstart="event.preventDefault();this.onmousedown(event);" ontouchend="event.preventDefault();this.onmouseup(event);" onmouseup="event.preventDefault();keyUp(88);keyUp(90);"> </div>
   </div>
   <div id="msg" style="opacity:0;">
@@ -126,9 +126,10 @@
           }
       }
   }
+  window.ontouchmove=function(e){e.preventDefault();}
   var btns=document.querySelectorAll("#touchpad div");
   function is_overlap(el,left,top){return top>=el.offsetTop&&left>=el.offsetLeft&&left<=(el.offsetLeft+el.offsetWidth)&&top<=(el.offsetTop+el.offsetHeight);}
-  window.ontouchcancel=window.ontouchend=function(e){for(var o=0;o<btns.length;o++){btns[o].ontouchend(e);}}
+  window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<btns.length;i++){btns[i].ontouchend(e);}}
   for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(e){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i],e.pageX,e.pageY)){this.ontouchend(e);btns[i].ontouchstart(e);}else{btns[i].ontouchend(e);}}}}
     </script>
 </body>
