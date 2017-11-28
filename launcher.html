@@ -127,7 +127,7 @@
       }
   }
 function is_overlap(el,left,top){return top>=el.offsetTop&&left>=el.offsetLeft&&left<=(el.offsetLeft+el.offsetWidth)&&top<=(el.offsetTop+el.offsetHeight);}
-window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<document.querySelectorAll(".catch").length;i++){document.querySelectorAll(".catch")[i].ontouchend(e);}}
+window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<document.getElementById("touchpad").children.length;i++){document.getElementById("touchpad").children[i].ontouchend(e);}}
 for(var i=0;i<document.getElementById("touchpad").children.length;i++){document.getElementById("touchpad").children[i].ontouchmove=function(e){for(var i=0;i<document.getElementById("touchpad").children.length;i++){if(is_overlap(document.getElementById("touchpad").children[i],e.pageX,e.pageY)){this.ontouchend(e);document.getElementById("touchpad").children[i].ontouchstart(e);}else{document.getElementById("touchpad").children[i].ontouchend(e);}}}}
   </script>
 </body>
