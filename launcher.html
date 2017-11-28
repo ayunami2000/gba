@@ -127,8 +127,8 @@
       }
   }
 function is_overlap(el,left,top){return top>=el.offsetTop&&left>=el.offsetLeft&&left<=(el.offsetLeft+el.offsetWidth)&&top<=(el.offsetTop+el.offsetHeight);}
-window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<document.getElementById("touchpad").children.length;i++){document.getElementById("touchpad").children[i].ontouchend(e);}}
-for(var i=0;i<document.getElementById("touchpad").children.length;i++){document.getElementById("touchpad").children[i].ontouchmove=function(e){for(var i=0;i<document.getElementById("touchpad").children.length;i++){if(is_overlap(document.getElementById("touchpad").children[i],e.pageX,e.pageY)){this.ontouchend(e);document.getElementById("touchpad").children[i].ontouchstart(e);}else{document.getElementById("touchpad").children[i].ontouchend(e);}}}}
-  </script>
+window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<document.querySelectorAll("#touchpad>*").length;i++){document.querySelectorAll("#touchpad>*")[i].ontouchend(e);}}
+for(var i=0;i<document.querySelectorAll("#touchpad>*").length;i++){document.querySelectorAll("#touchpad>*")[i].ontouchmove=function(e){for(var i=0;i<document.querySelectorAll("#touchpad>*").length;i++){if(is_overlap(document.querySelectorAll("#touchpad>*")[i],e.pageX,e.pageY)){this.ontouchend(e);document.querySelectorAll("#touchpad>*")[i].ontouchstart(e);}else{document.querySelectorAll("#touchpad>*")[i].ontouchend(e);}}}}
+    </script>
 </body>
 </html>
