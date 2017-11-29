@@ -130,7 +130,7 @@
   var btns=document.querySelectorAll("#touchpad div");
   function is_overlap(gbcr,x,y){return gbcr.top<=y&&gbcr.bottom>=y&&gbcr.left<=x&&gbcr.right>=x?1:0;}
   window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<btns.length;i++){btns[i].hasMoved=false;btns[i].ontouchend(e);}}
-  for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(event){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(this==btns[i]&&this.hasMoved){this.ontouchstart(event);};this.ontouchend(event);btns[i].ontouchstart(event);this.hasMoved=this!=btns[i]?true:false;}else{}}else{/*this!=btns[i]&&btns[i].ontouchend(event);*/}}}}
+  for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(event){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(this==btns[i]&&this.hasMoved){this.ontouchstart(event);};this.ontouchend(event);btns[i].ontouchstart(event);this.hasMoved=this!=btns[i]?true:false;}else{/*this!=btns[i]&&btns[i].ontouchend(event);*/}}}}
     </script>
 </body>
 </html>
