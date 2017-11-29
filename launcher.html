@@ -128,7 +128,7 @@
   }
   window.ontouchmove=function(e){e.preventDefault();}
   var btns=document.querySelectorAll("#touchpad div");
-  function is_overlap(gbcr,x,y){return gbcr.top<=y&&gbcr.bottom>=y&&gbcr.left<=x&&gbcr.right>=x?1:0;}
+  function is_overlap(gbcr,x,y){alert("Top: "+gbcr.top+"\nBottom: "+gbcr.bottom+"\nLeft: "+gbcr.left+"\nRight: "+gbcr.right+"\nX: "+x+"\nY: "+y);return gbcr.top<=y&&gbcr.bottom>=y&&gbcr.left<=x&&gbcr.right>=x?1:0;}
   window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<btns.length;i++){btns[i].ontouchend(e);}}
   for(var i=0;i<btns.length;i++){btns[i].ontouchmove=function(e){for(var i=0;i<btns.length;i++){if(this!=btns[i]&&is_overlap(btns[i].getBoundingClientRect(),e.clientX,e.clientY)){this.ontouchend(e);btns[i].ontouchstart(e);}else{this!=btns[i]&&btns[i].ontouchend(e);}}}}
     </script>
