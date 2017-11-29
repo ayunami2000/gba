@@ -126,11 +126,11 @@
           }
       }
   }
-  window.ontouchmove=function(event){event.stopPropagation();event.preventDefault();for(var o=0;o>btns.length;o++){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(o==i&&!btns[o].touching){this.ontouchstart(event);}else if(o!=i){this.ontouchend(event);btns[i].ontouchstart(event);}else{for(var a=0;a<btns.length;a++){if(o!=a&&btns[a].touching){btns[a].ontouchend(event);}}}}}}}
+  window.ontouchmove=function(event){event.stopPropagation();event.preventDefault();for(var o=0;o>btns.length;o++){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(o==i&&!btns[o].touching){this.ontouchstart(event);}else if(o!=i){this.ontouchend(event);btns[i].ontouchstart(event);}else{alert("already touching");for(var a=0;a<btns.length;a++){if(o!=a&&btns[a].touching){btns[a].ontouchend(event);}}}}}}}
   var btns=document.querySelectorAll("#touchpad div");
   function is_overlap(gbcr,x,y){return gbcr.top<=y&&gbcr.bottom>=y&&gbcr.left<=x&&gbcr.right>=x?1:0;}
   window.ontouchcancel=window.ontouchend=function(e){for(var i=0;i<btns.length;i++){btns[i].touching=false;btns[i].ontouchend(e);}}
-  for(var o=0;o<btns.length;o++){btns[o].ontouchmove=function(event){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(this==btns[i]&&!this.touching){this.ontouchstart(event);}else if(this!=btns[i]){this.ontouchend(event);btns[i].ontouchstart(event);}else{for(var a=0;a<btns.length;a++){if(this!=btns[a]&&btns[a].touching){btns[a].ontouchend(event);}}}}}}}
+  //for(var o=0;o<btns.length;o++){btns[o].ontouchmove=function(event){for(var i=0;i<btns.length;i++){if(is_overlap(btns[i].getBoundingClientRect(),event.pageX,event.pageY)){if(this==btns[i]&&!this.touching){this.ontouchstart(event);}else if(this!=btns[i]){this.ontouchend(event);btns[i].ontouchstart(event);}else{for(var a=0;a<btns.length;a++){if(this!=btns[a]&&btns[a].touching){btns[a].ontouchend(event);}}}}}}}
     </script>
 </body>
 </html>
