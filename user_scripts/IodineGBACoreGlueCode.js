@@ -104,6 +104,7 @@ var games = {
     "tmnt":"Teenage Mutant Ninja Turtles",
     "sims_bustin_out":"The Sims: Bustin' Out",
     "sims2":"The Sims 2",
+    "smashing_drive":"Smashing Drive",
     "spyro_adventure":"Spyro Adventure",
     "spyro_ice":"Spyro: Season of Ice",
     "spyro_flame":"Spyro 2: Season of Flame",
